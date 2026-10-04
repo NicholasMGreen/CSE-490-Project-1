@@ -1,0 +1,27 @@
+Part 5.2: 
+Viet: 
+Instruction Memory
+Data Memory
+Register File
+ALU
+Nick:
+Sign Extension
+Control Unit(s)
+Multiplexer(s)
+Program Counter
+
+
+Instructions: R-type → I-type → J-type
+	Each member is responsible for creating the approach necessary to display their working instruction on the physical FPGA board. 
+Viet: 
+add 0000 0000 R-type
+and 0000 0011 R-type
+lw 0001 N/A I-type
+sw 0010 N/A I-type
+addi 0011 N/A I-type
+Nick:
+sub 0000 0001 R-type
+sll 0000 0010 R-type
+beq 0100 N/A I-type 
+bne 0101 N/A I-type 
+jmp 0110 N/A J-type

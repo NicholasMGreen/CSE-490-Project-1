@@ -1,0 +1,7 @@
+Implementation Roadmap:
+1. Start with PC(Nick), ALU(Viet)
+2. Register File
+3. Full implementation and test of the add instruction
+4. Rest of R-type + I-type
+5. Control flow: `beq, bne, jmp`
+6. FPGA board full test
