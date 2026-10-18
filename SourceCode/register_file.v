@@ -8,14 +8,23 @@ module register_file(
     output [15:0] read_data_1, // R[rs] - value of register rs
     output [15:0] read_data_2  // R[rt/rd]
 );
+    reg [15:0] register [0:15];   // declare 16 registers, each ahs 16 bits
 
-    read_data_1 = ... register[read_reg_1]; // find the register rs --> put the value R[rs] into read_data_1
-    read_data_2 = ... register[read_reg_2]; // get register rt/rd --> put R[rt/td] in read_data-2
+    assign read_data_1 = register[read_reg_1]; // find the register rs --> put the value R[rs] into read_data_1
+    assign read_data_2 = register[read_reg_2]; // get register rt/rd --> put R[rt/td] in read_data-2
     
-    always @(pose clk) begin
+    
+    integer i;
+    always @(posedge clk) begin   
         if (reset) begin
-            // ... something here
-            // maybe need to write data (put value - write_data- into reg(write_reg))
+            // clears every register when reset
+            for (i = 0; i < 16; i = i + 1)
+                register[i] <= 16'd0;
+        end
+        else if (reg_write) begin
+            // write when enabled (currently true for all R-type), but for I-type and J it depends
+            register[write_reg] <= write_data;
         end
     end
+
 endmodule
