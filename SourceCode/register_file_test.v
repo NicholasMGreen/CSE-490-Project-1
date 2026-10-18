@@ -22,11 +22,6 @@ module register_file_test;
 	always #5 clk = ~clk;
 
 	initial begin
-		// TODO: tests go here
-		// the register file has a clock, so the pc_test pattern applies:
-		//   drive inputs away from the clock edge
-		//   @(posedge clk); #1;      (wait for the write to land, settle)
-		//   if (read_data_1 !== ...) $display(...)
 		// reset the register
 		reset = 1; reg_write = 0; write_reg = 0; write_data = 0;
 		@(posedge clk);

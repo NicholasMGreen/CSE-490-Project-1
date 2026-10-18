@@ -5,8 +5,7 @@ module control_unit(
     output reg   mem_read,    // 1 = data memory read for lw
     output reg   mem_write,   // 1 = data memory write for sw
     output reg   branch       // 1 = beq/bne
-    // note: the ALU takes opcode/func_code straight from the instruction,
-    // so the control unit does not feed the ALU in this design
+
 );
 
     always @(*) begin

@@ -1,7 +1,0 @@
-// this is the data memory file "memory.txt"
-// To load/read: $readmemh("memory.txt", mem);
-// To store/write: $writememh("memory.txt", mem);
-0210    // mem[0]  addr 0 : add $t2, $t1
-0341    // mem[1]  addr 2 : sub $t3, $t4
-0562    // mem[2]  addr 4 : sll $t5, $t6
-0873    // mem[3]  addr 6 : and $t8, $t7
