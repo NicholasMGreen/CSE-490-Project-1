@@ -1,30 +1,10 @@
 `timescale 1ns / 1ps
-//////////////////////////////////////////////////////////////////////////////////
-// Company: 
-// Engineer: 
-// 
-// Create Date: 10/12/2026 03:27:39 PM
-// Design Name: 
-// Module Name: pc
-// Project Name: 
-// Target Devices: 
-// Tool Versions: 
-// Description: 
-// 
-// Dependencies: 
-// 
-// Revision:
-// Revision 0.01 - File Created
-// Additional Comments:
-// 
-//////////////////////////////////////////////////////////////////////////////////
-
 
 module pc(
     input clk,
-    input rst,
-    input load,
-    input [15:0] target,
+    input rst, //starts the pc at 0, hardware could have floped ot a drffernt address
+    input load, //input shift ammount yes or no
+    input [15:0] target, //shift ammount can be positive or negative 16 bit 
     output reg [15:0] pc
     );
     
