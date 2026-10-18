@@ -1,6 +1,7 @@
 module register_file(
     input clk,
     input reset,
+    input reg_write,
     input [3:0] read_reg_1,   // instruction bit [7..4] - address for rs
     input [3:0] read_reg_2,   // instruction bit [11..8] - address for rt/rd
     input [3:0] write_reg,    // instruction bit [11.8] - address for rt/rd
