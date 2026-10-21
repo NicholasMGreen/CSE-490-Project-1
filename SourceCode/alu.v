@@ -1,10 +1,10 @@
 module alu (
     input      [15:0] x,          // R[rs]
-    input      [15:0] y,          // R[rt/rd] 
+    input      [15:0] y,          // R[rt/rd] or sign-extended imm (for addi function). Choosing from the mux
     input      [3:0]  opcode,       // 4 bit opcode
     input      [3:0]  func_code,    // 4 bit func code
     output reg [15:0] result,      // the result after ALU
-    output            zero          // for branch, jump, I and J tbpe in general - will do it later
+    output            zero          // for branch, jump, I and J type in general - will do it later
 );
     always @(*) begin
         result = 16'd0;
@@ -18,10 +18,10 @@ module alu (
                     default: result = 16'd0;
                 endcase
             end
-        //else 
-            //begin                                //I-type or J-type ... will continue to work on that later
-            // ... something here
-            //end
+        else if (opcode == 4'b0011)      // addi
+            begin
+                result = x + y;          // R[rs] + signext(imm), y comes from the mux
+            end
     end
 
     assign zero = 1'd0;     //leave the zero here = 0 for now, need to fix when dealing with branching and stuff
