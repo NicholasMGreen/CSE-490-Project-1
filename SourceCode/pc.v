@@ -2,7 +2,7 @@
 
 module pc(
     input clk,
-    input rst, //starts the pc at 0, hardware could have floped ot a drffernt address
+    input reset, //starts the pc at 0, hardware could have floped ot a drffernt address
     input load, //input shift ammount yes or no
     input [15:0] target, //shift ammount can be positive or negative 16 bit 
     output reg [15:0] pc
