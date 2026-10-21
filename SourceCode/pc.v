@@ -9,7 +9,7 @@ module pc(
     );
     
     always @(posedge clk) begin 
-        if (rst)
+        if (reset)
             pc <= 16'd0;
         else if (load)
             pc <= target;
