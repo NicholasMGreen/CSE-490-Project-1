@@ -5,11 +5,11 @@
 // note cant use hyphens in module names
 module pc_test;
 
-	reg clk, rst, load;
+	reg clk, reset, load;
 	reg [15:0] target;
 	wire [15:0] pc;
 
-	pc uut (.clk(clk), .rst(rst), .load(load), .target(target), .pc(pc));
+	pc uut (.clk(clk), .reset(reset), .load(load), .target(target), .pc(pc));
 
 	// 10ns period clock
 	initial clk = 0;
@@ -17,13 +17,13 @@ module pc_test;
 
 	initial begin
 		// hold reset, pc should stay 0
-		rst = 1; load = 0; target = 0;
+		reset = 1; load = 0; target = 0;
 		@(posedge clk); #1;
 		if (pc !== 16'd0) $display("FAIL: pc = %h after reset, expected 0", pc);
 		else $display("PASS: pc = %h after reset", pc);
 
 		// let it count up by 2
-		rst = 0;
+		reset = 0;
 		@(posedge clk); #1;
 		if (pc !== 16'd2) $display("FAIL: pc = %h, expected 2", pc);
 		else $display("PASS: pc = 2");
