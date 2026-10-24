@@ -22,8 +22,18 @@ module alu (
             begin
                 result = x + y;          // R[rs] + signext(imm), y comes from the mux
             end
+	else if (opcode == 4'b0001 || opcode == 4'b0010)	//lw or sw
+		begin
+			result = x + y;
+		end
+	else if (opcode == 4'b0100 || opcode ==  4'b0101)
+		begin
+			result = x - y;
+		end
+
     end
 
-    assign zero = 1'd0;     //leave the zero here = 0 for now, need to fix when dealing with branching and stuff
+    assign zero = (result == 16'd0);   // zero = 1 when R[rs] == R[rt/rd]
+
     
 endmodule
