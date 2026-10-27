@@ -13,7 +13,14 @@ module wiring(
     wire [3:0] func_code = instr[3:0];
     
     // control signals
-    wire reg_write, mem_read, mem_write, branch, alu_src;
+    wire reg_write, mem_read, mem_write, branch, alu_src, jump, memto_reg;
+    wire [15:0] dm_read_data;          // data memory output
+    wire [15:0] write_back;            // memto_reg mux output
+    wire [15:0] pc_plus2;              // PC + 2, branch/jump need to start with 2
+    wire [15:0] offset;                // branch or jump shift ammount
+    wire [15:0] branch_target;         // pc_plus2 + offset
+    wire pc_load;                      //shif yes or no
+    wire [15:0] jump_imm;          // 12-bit sign-extended jump immediate
     
     // data path
     wire [15:0] read_data_1;   // R[rs]    -> ALU x
@@ -24,10 +31,21 @@ module wiring(
     wire [15:0] imm_ext;      // sign-extended instr[3:0]
     wire [15:0] alu_y;        // mux output from the alu_src-> ALU y
     
+    
     // Instruction memory: intput the PC address in --> getting output as 16-bit instruction 
     instruction_memory call_instr_mem (
         .pc_address (pc_out),
         .instr      (instr)
+    );
+    
+    // Data memory: R[rs] + imm
+    data_memory call_data_mem (
+        .clk (clk),
+        .mem_read (mem_read),
+        .mem_write (mem_write),
+        .address (alu_result),
+        .write_data (read_data_2),
+        .read_data (dm_read_data)
     );
     
     // Control unit: input the opcode and function code, output with the control signals
@@ -38,7 +56,9 @@ module wiring(
         .mem_read (mem_read),
         .mem_write (mem_write),
         .branch (branch), 
-        .alu_src (alu_src)         // choosing between immediate value (for addi func) or rt/rd (R-type
+        .alu_src (alu_src),         // choosing between immediate value (for addi func) or rt/rd (R-type
+        .jump (jump),
+        .momto_reg (memto_reg)
     );
     
     // Register file: read rs and rt/rd, write result back into rt/rd
@@ -62,8 +82,8 @@ module wiring(
 
     // ALU source mux: 0 = R[rt/rd] (R-type), 1 = sign-extended imm (addi)
     mux2 call_alu_src_mux (
-        .in0 (read_data_2),
-        .in1 (imm_ext),
+        .in0 (read_data_2), 
+        .in1 (imm_ext), 
         .sel (alu_src),
         .out (alu_y)
     );
