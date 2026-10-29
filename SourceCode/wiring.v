@@ -58,7 +58,15 @@ module wiring(
         .branch (branch), 
         .alu_src (alu_src),         // choosing between immediate value (for addi func) or rt/rd (R-type
         .jump (jump),
-        .momto_reg (memto_reg)
+        .memto_reg (memto_reg)
+    );
+    
+    // memto_reg mux: lw writes memory data or its an ALU result
+    mux2 call_wb_mux (
+        .in0 (alu_result),      // normal path
+        .in1 (dm_read_data),    // lw path
+        .sel (memto_reg),
+        .out (write_back)
     );
     
     // Register file: read rs and rt/rd, write result back into rt/rd
@@ -69,7 +77,7 @@ module wiring(
         .read_reg_1  (rs),
         .read_reg_2  (rt_rd),
         .write_reg   (rt_rd),
-        .write_data  (alu_result),   // R-type: ALU result goes straight back
+        .write_data  (write_back),   // R-type: ALU result goes straight back
         .read_data_1 (read_data_1),
         .read_data_2 (read_data_2)
     );
@@ -102,9 +110,37 @@ module wiring(
     pc call_pc (
         .clk (clk),
         .reset (reset),
-        .load (1'b0),        // currently not use yet during R-type (no branches yet)
-        .target (16'd0),        // currently not use yet during R-tpe
+        .load (pc_load),       
+        .target (branch_target),        
         .pc (pc_out)
     );
- 
+    
+    // branch/jump databath
+    assign pc_plus2 = pc_out + 16'd2; //base of the banch/jump accounts for the instruction itself
+    // mux in the draw.io diagram chossing between 12bit jump and 4bit branch
+    mux2 call_offset_mux (
+       .in0 (imm_ext),
+       .in1 (jump_imm),
+       .sel (jump),
+       .out (offset)
+    );
+    assign branch_target = pc_plus2 + (offset << 1);
+    
+    //instatiate the 12bit sign extension
+    sign_extension_12bit call_sign_ext12 (
+       .imm (instr[11:0]),     // jmp address field
+       .extend (jump_imm)
+    );
+    
+    // branch condition  beq (0100) takes the branch on zero=1, bne (0101) takes it on zero=0
+    reg branch_cond_ok;
+    always @(*) begin
+        branch_cond_ok = 1'b0;              // default 
+        if (opcode == 4'b0100)              // beq take when equal
+            branch_cond_ok = alu_zero;
+        else                                // bne take when not equal
+            branch_cond_ok = ~alu_zero;     //flips all bits 
+    end
+    assign pc_load = jump | (branch & branch_cond_ok);
+    
 endmodule
