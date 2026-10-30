@@ -3,7 +3,7 @@ module wiring(
     input reset
 );
 
-    wire [15:0] pc_out;        // PC -> instruction memory
+    output [15:0] pc_out;        // PC -> instruction memory
     wire [15:0] instr;         // instruction memory -> everything below
     
     // instruction field
@@ -133,14 +133,14 @@ module wiring(
     );
     
     // branch condition  beq (0100) takes the branch on zero=1, bne (0101) takes it on zero=0
-    reg branch_cond_ok;
+    reg branch_ok;
     always @(*) begin
-        branch_cond_ok = 1'b0;              // default 
+        branch_ok = 1'b0;              // default 
         if (opcode == 4'b0100)              // beq take when equal
-            branch_cond_ok = alu_zero;
+            branch_ok = alu_zero;
         else                                // bne take when not equal
-            branch_cond_ok = ~alu_zero;     //flips all bits 
+            branch_ok = ~alu_zero;     //flips all bits 
     end
-    assign pc_load = jump | (branch & branch_cond_ok);
+    assign pc_load = jump | (branch & branch_ok);
     
 endmodule
