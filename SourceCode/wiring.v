@@ -1,9 +1,9 @@
 module wiring(
     input clk,
-    input reset
+    input reset,
+    output [15:0] pc_out        // PC -> instruction memory
 );
 
-    output [15:0] pc_out;        // PC -> instruction memory
     wire [15:0] instr;         // instruction memory -> everything below
     
     // instruction field

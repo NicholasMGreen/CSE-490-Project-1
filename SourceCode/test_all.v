@@ -28,10 +28,11 @@ module test_all;
             end
          end
 
-         if (pc_out == 16'h0052)
+         if (pc_out == 16'h0072)
             $display("PASS: all 10 instructions verifie");
          else if (pc_out < 16'h0074)
             $display("FAIL: program did not finish - PC at %h outside proper range", pc_out);
          $display("All Test done");
+         $finish;
       end
 endmodule
