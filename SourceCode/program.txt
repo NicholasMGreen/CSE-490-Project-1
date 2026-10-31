@@ -1,80 +1,79 @@
-// board demo: each instruction tested once, self-checking
-// pass = PC parks at 0x72; fail = PC stuck in a fail loop (0x74+)
+// pass = PC ends at 0x72; fail = PC stuck in a fail loop (0x74+)
 // T1: add (fail loop 0x74)
-3103   // 0x00  R1 = R0 + 3
-3304   // 0x02  R3 = R0 + 4
-0310   // 0x04  R3 = R1 add R3
-3407   // 0x06  R4 = R0 + 7
-4431   // 0x08  if R3 == R4: pc = 0xA + 2 = 0xC
-6034   // 0x0A  pc = 0xC + 104 = 0x74
+3103   // 0x00  addi R1, 3
+3304   // 0x02  addi R3, 4
+0310   // 0x04  add  R3 = R1 + R3
+3407   // 0x06  addi R4, 7
+4431   // 0x08  beq  R3, R4   
+6034   // 0x0A  jmp  0x74
 // T2: sub (fail loop 0x76)
-3506   // 0x0C  R5 = R0 + 6
-3602   // 0x0E  R6 = R0 + 2
-0651   // 0x10  R6 = R5 sub R6
-3704   // 0x12  R7 = R0 + 4
-5761   // 0x14  if R6 != R7: pc = 0x16 + 2 = 0x18
-6001   // 0x16  pc = 0x18 + 2 = 0x1A
-602E   // 0x18  pc = 0x1A + 92 = 0x76
+3506   // 0x0C  addi R5, 6
+3602   // 0x0E  addi R6, 2
+0651   // 0x10  sub  R6 = R5 - R6
+3704   // 0x12  addi R7, 4
+5761   // 0x14  bne  R6, R7   
+6001   // 0x16  jmp  0x1A
+602E   // 0x18  jmp  0x76
 // T3: sll (fail loop 0x78)
-3801   // 0x1A  R8 = R0 + 1
-3902   // 0x1C  R9 = R0 + 2
-0892   // 0x1E  R8 = R9 sll R8
-3A04   // 0x20  R10 = R0 + 4
-4A81   // 0x22  if R8 == R10: pc = 0x24 + 2 = 0x26
-6029   // 0x24  pc = 0x26 + 82 = 0x78
+3801   // 0x1A  addi R8, 1
+3902   // 0x1C  addi R9, 2
+0892   // 0x1E  sll  R8 = R9 << R8
+3A04   // 0x20  addi R10, 4
+4A81   // 0x22  beq  R8, R10   
+6029   // 0x24  jmp  0x78
 // T4: and (fail loop 0x7A)
-3B06   // 0x26  R11 = R0 + 6
-3C03   // 0x28  R12 = R0 + 3
-0CB3   // 0x2A  R12 = R11 and R12
-3D02   // 0x2C  R13 = R0 + 2
-4DC1   // 0x2E  if R12 == R13: pc = 0x30 + 2 = 0x32
-6024   // 0x30  pc = 0x32 + 72 = 0x7A
+3B06   // 0x26  addi R11, 6
+3C03   // 0x28  addi R12, 3
+0CB3   // 0x2A  and  R12 = R11 & R12
+3D02   // 0x2C  addi R13, 2
+4DC1   // 0x2E  beq  R12, R13   
+6024   // 0x30  jmp  0x7A
 // T5: addi with negative immediate -2 (fail loop 0x7C)
-3E07   // 0x32  R14 = R0 + 7
-3EEE   // 0x34  R14 = R14 + -2
-3F05   // 0x36  R15 = R0 + 5
-4FE1   // 0x38  if R14 == R15: pc = 0x3A + 2 = 0x3C
-6020   // 0x3A  pc = 0x3C + 64 = 0x7C
-// T6: sw + lw round trip (fail loop 0x7E)
-3106   // 0x3C  R1 = R0 + 6
-3204   // 0x3E  R2 = R0 + 4
-2120   // 0x40  mem[R2+0] = R1
-1320   // 0x42  mem[R2+0] <- R3
-3406   // 0x44  R4 = R0 + 6
-4431   // 0x46  if R3 == R4: pc = 0x48 + 2 = 0x4A
-601A   // 0x48  pc = 0x4A + 52 = 0x7E
+3E07   // 0x32  addi R14, 7
+3EEE   // 0x34  addi R14, R14, -2
+3F05   // 0x36  addi R15, 5
+4FE1   // 0x38  beq  R14, R15   
+6020   // 0x3A  jmp  0x7C
+// T6: sw + lw (fail loop 0x7E)
+3106   // 0x3C  addi R1, 6
+3204   // 0x3E  addi R2, 4
+2120   // 0x40  sw   R1, R2, 0   # mem[R2+0] = R1
+1320   // 0x42  lw   R3, R2, 0   # R3 = mem[R2+0]
+3406   // 0x44  addi R4, 6
+4431   // 0x46  beq  R3, R4  
+601A   // 0x48  jmp  0x7E
 // T7: beq taken (fail loops 0x80/0x82)
-3503   // 0x4A  R5 = R0 + 3
-3603   // 0x4C  R6 = R0 + 3
-4652   // 0x4E  if R5 == R6: pc = 0x50 + 4 = 0x54
-3701   // 0x50  R7 = R0 + 1
-6016   // 0x52  pc = 0x54 + 44 = 0x80
-4781   // 0x54  if R8 == R7: pc = 0x56 + 2 = 0x58
-6015   // 0x56  pc = 0x58 + 42 = 0x82
+3503   // 0x4A  addi R5, 3
+3603   // 0x4C  addi R6, 3
+4652   // 0x4E  beq  R5, R6   
+3701   // 0x50  addi R7, 1
+6016   // 0x52  jmp  0x80
+4781   // 0x54  beq  R8, R7   
+6015   // 0x56  jmp  0x82
 // T8: bne taken + beq NOT taken (fail loops 0x84/0x86)
-3503   // 0x58  R5 = R0 + 3
-3604   // 0x5A  R6 = R0 + 4
-5652   // 0x5C  if R5 != R6: pc = 0x5E + 4 = 0x62
-3701   // 0x5E  R7 = R0 + 1
-6011   // 0x60  pc = 0x62 + 34 = 0x84
-4651   // 0x62  if R5 == R6: pc = 0x64 + 2 = 0x66
-6001   // 0x64  pc = 0x66 + 2 = 0x68
-600F   // 0x66  pc = 0x68 + 30 = 0x86
-6002   // 0x68  pc = 0x6A + 4 = 0x6E
-3D01   // 0x6A  R13 = R0 + 1
-600D   // 0x6C  pc = 0x6E + 26 = 0x88
-4D91   // 0x6E  if R9 == R13: pc = 0x70 + 2 = 0x72
-600B   // 0x70  pc = 0x72 + 22 = 0x88
+3503   // 0x58  addi R5, 3
+3604   // 0x5A  addi R6, 4
+5652   // 0x5C  bne  R5, R6   
+3701   // 0x5E  addi R7, 1
+6011   // 0x60  jmp  0x84
+4651   // 0x62  beq  R5, R6   
+6001   // 0x64  jmp  0x68
+600F   // 0x66  jmp  0x86
+6002   // 0x68  jmp  0x6E
+3D01   // 0x6A  addi R13, 1
+600D   // 0x6C  jmp  0x88
+4D91   // 0x6E  beq  R9, R13   
+600B   // 0x70  jmp  0x88
 // T9: jmp - skips the poison (fail loop 0x88)
-6FFF   // 0x72  pc = 0x74 + -2 = 0x72
-6FFF   // 0x74  pc = 0x76 + -2 = 0x74
-6FFF   // 0x76  pc = 0x78 + -2 = 0x76
-6FFF   // 0x78  pc = 0x7A + -2 = 0x78
-6FFF   // 0x7A  pc = 0x7C + -2 = 0x7A
-6FFF   // 0x7C  pc = 0x7E + -2 = 0x7C
-6FFF   // 0x7E  pc = 0x80 + -2 = 0x7E
-6FFF   // 0x80  pc = 0x82 + -2 = 0x80
-6FFF   // 0x82  pc = 0x84 + -2 = 0x82
-6FFF   // 0x84  pc = 0x86 + -2 = 0x84
-6FFF   // 0x86  pc = 0x88 + -2 = 0x86
-6FFF   // 0x88  pc = 0x8A + -2 = 0x88
+6FFF   // 0x72  jmp  0x72
+6FFF   // 0x74  jmp  0x74
+6FFF   // 0x76  jmp  0x76
+6FFF   // 0x78  jmp  0x78
+6FFF   // 0x7A  jmp  0x7A
+6FFF   // 0x7C  jmp  0x7C
+6FFF   // 0x7E  jmp  0x7E
+6FFF   // 0x80  jmp  0x80
+6FFF   // 0x82  jmp  0x82
+6FFF   // 0x84  jmp  0x84
+6FFF   // 0x86  jmp  0x86
+6FFF   // 0x88  jmp  0x88
