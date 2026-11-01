@@ -1,0 +1,315 @@
+INFO: [Common 17-3922] A valid Vivado Design Suite BASIC license has been detected. Your current license is active and will expire on 12-oct-2027.
+#-----------------------------------------------------------
+# Vivado v2026.1 (64-bit)
+# SW Build 6511674 on Tue Jun 16 11:01:26 MDT 2026
+# IP Build 6504888 on Tue Jun 09 09:05:25 MDT 2026
+# SharedData Build 6501428 on Mon Jun 08 17:34:18 MDT 2026
+# Start of session at: Sun Nov  1 16:40:59 2026
+# Process ID         : 1841969
+# Current directory  : /home/noetherverse/Projects/cse490_16bit_processor/vivado/16bit_processor.runs/synth_1
+# Command line       : vivado -log board_top.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source board_top.tcl
+# Log file           : /home/noetherverse/Projects/cse490_16bit_processor/vivado/16bit_processor.runs/synth_1/board_top.vds
+# Journal file       : /home/noetherverse/Projects/cse490_16bit_processor/vivado/16bit_processor.runs/synth_1/vivado.jou
+# Running On         : pcexitnode
+# Platform           : unknown
+# Operating System   : unknown
+# Processor Detail   : Intel(R) Core(TM) i3-10100 CPU @ 3.60GHz
+# CPU Frequency      : 4099.954 MHz
+# CPU Physical cores : 4
+# CPU Logical cores  : 8
+# Host memory        : 67146 MB
+# Swap memory        : 134298 MB
+# Total Virtual      : 201445 MB
+# Available Virtual  : 190783 MB
+#-----------------------------------------------------------
+source board_top.tcl -notrace
+Command: synth_design -top board_top -part xc7a35tcpg236-1
+Starting synth_design
+Attempting to get a license for feature 'Vivado_Synthesis' and/or device 'xc7a35t'
+INFO: [Common 17-349] Got license for feature 'Vivado_Synthesis' and/or device 'xc7a35t'
+INFO: [Device 21-403] Loading part xc7a35tcpg236-1
+INFO: [Designutils 20-5008] Incremental synthesis strategy default
+INFO: [Synth 8-7079] Multithreading enabled for synth_design using a maximum of 7 processes.
+INFO: [Synth 8-7078] Launching helper process for spawning children vivado processes
+INFO: [Synth 8-7075] Helper process launched with PID 1842135
+---------------------------------------------------------------------------------
+Starting RTL Elaboration : Time (s): cpu = 00:00:04 ; elapsed = 00:00:04 . Memory (MB): peak = 2367.672 ; gain = 516.031 ; free physical = 5619 ; free virtual = 180727
+---------------------------------------------------------------------------------
+INFO: [Synth 8-6157] synthesizing module 'board_top' [/home/noetherverse/Projects/cse490_16bit_processor/vivado/16bit_processor.srcs/sources_1/new/board_top.v:7]
+INFO: [Synth 8-6157] synthesizing module 'wiring' [/home/noetherverse/Projects/cse490_16bit_processor/vivado/16bit_processor.srcs/sources_1/new/wiring.v:1]
+INFO: [Synth 8-6157] synthesizing module 'instruction_memory' [/home/noetherverse/Projects/cse490_16bit_processor/vivado/16bit_processor.srcs/sources_1/new/instruction_memory.v:1]
+INFO: [Synth 8-3876] $readmem data file 'program.txt' is read successfully [/home/noetherverse/Projects/cse490_16bit_processor/vivado/16bit_processor.srcs/sources_1/new/instruction_memory.v:14]
+INFO: [Synth 8-6155] done synthesizing module 'instruction_memory' (0#1) [/home/noetherverse/Projects/cse490_16bit_processor/vivado/16bit_processor.srcs/sources_1/new/instruction_memory.v:1]
+INFO: [Synth 8-6157] synthesizing module 'data_memory' [/home/noetherverse/Projects/cse490_16bit_processor/vivado/16bit_processor.srcs/sources_1/new/data_memory.v:1]
+INFO: [Synth 8-6155] done synthesizing module 'data_memory' (0#1) [/home/noetherverse/Projects/cse490_16bit_processor/vivado/16bit_processor.srcs/sources_1/new/data_memory.v:1]
+INFO: [Synth 8-6157] synthesizing module 'control_unit' [/home/noetherverse/Projects/cse490_16bit_processor/vivado/16bit_processor.srcs/sources_1/new/control_unit.v:1]
+INFO: [Synth 8-6155] done synthesizing module 'control_unit' (0#1) [/home/noetherverse/Projects/cse490_16bit_processor/vivado/16bit_processor.srcs/sources_1/new/control_unit.v:1]
+INFO: [Synth 8-6157] synthesizing module 'mux2' [/home/noetherverse/Projects/cse490_16bit_processor/vivado/16bit_processor.srcs/sources_1/new/mux2.v:2]
+INFO: [Synth 8-6155] done synthesizing module 'mux2' (0#1) [/home/noetherverse/Projects/cse490_16bit_processor/vivado/16bit_processor.srcs/sources_1/new/mux2.v:2]
+INFO: [Synth 8-6157] synthesizing module 'register_file' [/home/noetherverse/Projects/cse490_16bit_processor/vivado/16bit_processor.srcs/sources_1/new/register_file.v:1]
+INFO: [Synth 8-6155] done synthesizing module 'register_file' (0#1) [/home/noetherverse/Projects/cse490_16bit_processor/vivado/16bit_processor.srcs/sources_1/new/register_file.v:1]
+INFO: [Synth 8-6157] synthesizing module 'sign_extension' [/home/noetherverse/Projects/cse490_16bit_processor/vivado/16bit_processor.srcs/sources_1/new/sign_extension.v:4]
+INFO: [Synth 8-6155] done synthesizing module 'sign_extension' (0#1) [/home/noetherverse/Projects/cse490_16bit_processor/vivado/16bit_processor.srcs/sources_1/new/sign_extension.v:4]
+INFO: [Synth 8-6157] synthesizing module 'alu' [/home/noetherverse/Projects/cse490_16bit_processor/vivado/16bit_processor.srcs/sources_1/new/alu.v:1]
+INFO: [Synth 8-6155] done synthesizing module 'alu' (0#1) [/home/noetherverse/Projects/cse490_16bit_processor/vivado/16bit_processor.srcs/sources_1/new/alu.v:1]
+INFO: [Synth 8-6157] synthesizing module 'pc' [/home/noetherverse/Projects/cse490_16bit_processor/vivado/16bit_processor.srcs/sources_1/new/pc.v:3]
+INFO: [Synth 8-6155] done synthesizing module 'pc' (0#1) [/home/noetherverse/Projects/cse490_16bit_processor/vivado/16bit_processor.srcs/sources_1/new/pc.v:3]
+INFO: [Synth 8-6157] synthesizing module 'sign_extension_12bit' [/home/noetherverse/Projects/cse490_16bit_processor/vivado/16bit_processor.srcs/sources_1/new/sign_extension_12bit.v:3]
+INFO: [Synth 8-6155] done synthesizing module 'sign_extension_12bit' (0#1) [/home/noetherverse/Projects/cse490_16bit_processor/vivado/16bit_processor.srcs/sources_1/new/sign_extension_12bit.v:3]
+INFO: [Synth 8-6155] done synthesizing module 'wiring' (0#1) [/home/noetherverse/Projects/cse490_16bit_processor/vivado/16bit_processor.srcs/sources_1/new/wiring.v:1]
+INFO: [Synth 8-6155] done synthesizing module 'board_top' (0#1) [/home/noetherverse/Projects/cse490_16bit_processor/vivado/16bit_processor.srcs/sources_1/new/board_top.v:7]
+WARNING: [Synth 8-4767] Trying to implement RAM 'mem_reg' in registers. Block RAM or DRAM implementation is not possible; see log for reasons. [/home/noetherverse/Projects/cse490_16bit_processor/vivado/16bit_processor.srcs/sources_1/new/data_memory.v:35]
+Reason is one or more of the following :
+	1: RAM has multiple writes via different ports in same process. If RAM inferencing intended, write to one port per process. 
+	2: Invalid write to RAM. 
+	3: No valid clock found for write to RAM. 
+WARNING: [Synth 8-3917] design board_top has port led[13] driven by constant 0
+WARNING: [Synth 8-3917] design board_top has port led[12] driven by constant 0
+WARNING: [Synth 8-3917] design board_top has port led[11] driven by constant 0
+WARNING: [Synth 8-3917] design board_top has port led[10] driven by constant 0
+WARNING: [Synth 8-3917] design board_top has port led[9] driven by constant 0
+WARNING: [Synth 8-3917] design board_top has port led[8] driven by constant 0
+WARNING: [Synth 8-7129] Port func_code[3] in module control_unit is either unconnected or has no load
+WARNING: [Synth 8-7129] Port func_code[2] in module control_unit is either unconnected or has no load
+WARNING: [Synth 8-7129] Port func_code[1] in module control_unit is either unconnected or has no load
+WARNING: [Synth 8-7129] Port func_code[0] in module control_unit is either unconnected or has no load
+WARNING: [Synth 8-7129] Port address[15] in module data_memory is either unconnected or has no load
+WARNING: [Synth 8-7129] Port address[14] in module data_memory is either unconnected or has no load
+WARNING: [Synth 8-7129] Port address[13] in module data_memory is either unconnected or has no load
+WARNING: [Synth 8-7129] Port address[12] in module data_memory is either unconnected or has no load
+WARNING: [Synth 8-7129] Port address[11] in module data_memory is either unconnected or has no load
+WARNING: [Synth 8-7129] Port address[10] in module data_memory is either unconnected or has no load
+WARNING: [Synth 8-7129] Port address[9] in module data_memory is either unconnected or has no load
+WARNING: [Synth 8-7129] Port address[8] in module data_memory is either unconnected or has no load
+WARNING: [Synth 8-7129] Port pc_address[15] in module instruction_memory is either unconnected or has no load
+WARNING: [Synth 8-7129] Port pc_address[14] in module instruction_memory is either unconnected or has no load
+WARNING: [Synth 8-7129] Port pc_address[13] in module instruction_memory is either unconnected or has no load
+WARNING: [Synth 8-7129] Port pc_address[12] in module instruction_memory is either unconnected or has no load
+WARNING: [Synth 8-7129] Port pc_address[11] in module instruction_memory is either unconnected or has no load
+WARNING: [Synth 8-7129] Port pc_address[10] in module instruction_memory is either unconnected or has no load
+WARNING: [Synth 8-7129] Port pc_address[9] in module instruction_memory is either unconnected or has no load
+WARNING: [Synth 8-7129] Port pc_address[8] in module instruction_memory is either unconnected or has no load
+WARNING: [Synth 8-7129] Port pc_address[0] in module instruction_memory is either unconnected or has no load
+---------------------------------------------------------------------------------
+Finished RTL Elaboration : Time (s): cpu = 00:00:06 ; elapsed = 00:00:06 . Memory (MB): peak = 2479.641 ; gain = 628.000 ; free physical = 5443 ; free virtual = 180547
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:06 ; elapsed = 00:00:06 . Memory (MB): peak = 2482.609 ; gain = 630.969 ; free physical = 5443 ; free virtual = 180547
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:06 ; elapsed = 00:00:06 . Memory (MB): peak = 2482.609 ; gain = 630.969 ; free physical = 5443 ; free virtual = 180547
+---------------------------------------------------------------------------------
+Netlist sorting complete. Time (s): cpu = 00:00:00.03 ; elapsed = 00:00:00.03 . Memory (MB): peak = 2482.609 ; gain = 0.000 ; free physical = 5450 ; free virtual = 180554
+INFO: [Project 1-570] Preparing netlist for logic optimization
+
+Processing XDC Constraints
+Initializing timing engine
+Parsing XDC File [/home/noetherverse/Projects/cse490_16bit_processor/vivado/16bit_processor.srcs/constrs_1/new/processor.xdc]
+Finished Parsing XDC File [/home/noetherverse/Projects/cse490_16bit_processor/vivado/16bit_processor.srcs/constrs_1/new/processor.xdc]
+INFO: [Project 1-236] Implementation specific constraints were found while reading constraint file [/home/noetherverse/Projects/cse490_16bit_processor/vivado/16bit_processor.srcs/constrs_1/new/processor.xdc]. These constraints will be ignored for synthesis but will be used in implementation. Impacted constraints are listed in the file [.Xil/board_top_propImpl.xdc].
+Resolution: To avoid this warning, move constraints listed in [.Xil/board_top_propImpl.xdc] to another XDC file and exclude this new file from synthesis with the used_in_synthesis property (File Properties dialog in GUI) and re-run elaboration/synthesis.
+Completed Processing XDC Constraints
+
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2590.074 ; gain = 0.000 ; free physical = 5414 ; free virtual = 180517
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+Constraint Validation Runtime : Time (s): cpu = 00:00:00.01 ; elapsed = 00:00:00.01 . Memory (MB): peak = 2590.109 ; gain = 0.000 ; free physical = 5414 ; free virtual = 180517
+---------------------------------------------------------------------------------
+Finished Constraint Validation : Time (s): cpu = 00:00:12 ; elapsed = 00:00:12 . Memory (MB): peak = 2590.109 ; gain = 738.469 ; free physical = 5435 ; free virtual = 180535
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Loading Part and Timing Information
+---------------------------------------------------------------------------------
+Loading part: xc7a35tcpg236-1
+---------------------------------------------------------------------------------
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:12 ; elapsed = 00:00:12 . Memory (MB): peak = 2598.078 ; gain = 746.438 ; free physical = 5435 ; free virtual = 180535
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Applying 'set_property' XDC Constraints
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:12 ; elapsed = 00:00:12 . Memory (MB): peak = 2598.078 ; gain = 746.438 ; free physical = 5435 ; free virtual = 180535
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:14 ; elapsed = 00:00:15 . Memory (MB): peak = 2598.078 ; gain = 746.438 ; free physical = 5437 ; free virtual = 180542
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start RTL Component Statistics 
+---------------------------------------------------------------------------------
+Detailed RTL Component Info : 
++---Adders : 
+	   3 Input   16 Bit       Adders := 2     
+	   2 Input   16 Bit       Adders := 2     
+	   2 Input    2 Bit       Adders := 1     
++---Registers : 
+	               16 Bit    Registers := 17    
+	                8 Bit    Registers := 256   
+	                2 Bit    Registers := 1     
+	                1 Bit    Registers := 5     
++---Muxes : 
+	 129 Input   16 Bit        Muxes := 1     
+	   2 Input   16 Bit        Muxes := 11    
+	   4 Input   16 Bit        Muxes := 1     
+	   3 Input   16 Bit        Muxes := 1     
+	   2 Input    1 Bit        Muxes := 410   
+	   3 Input    1 Bit        Muxes := 126   
+	   4 Input    1 Bit        Muxes := 2     
+	   7 Input    1 Bit        Muxes := 1     
+	   8 Input    1 Bit        Muxes := 1     
+---------------------------------------------------------------------------------
+Finished RTL Component Statistics 
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Part Resource Summary
+---------------------------------------------------------------------------------
+Part Resources:
+DSPs: 90 (col length:60)
+BRAMs: 100 (col length: RAMB18 60 RAMB36 30)
+---------------------------------------------------------------------------------
+Finished Part Resource Summary
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Cross Boundary and Area Optimization
+---------------------------------------------------------------------------------
+WARNING: [Synth 8-3917] design board_top has port led[13] driven by constant 0
+WARNING: [Synth 8-3917] design board_top has port led[12] driven by constant 0
+WARNING: [Synth 8-3917] design board_top has port led[11] driven by constant 0
+WARNING: [Synth 8-3917] design board_top has port led[10] driven by constant 0
+WARNING: [Synth 8-3917] design board_top has port led[9] driven by constant 0
+WARNING: [Synth 8-3917] design board_top has port led[8] driven by constant 0
+WARNING: [Synth 8-7129] Port address[15] in module data_memory is either unconnected or has no load
+WARNING: [Synth 8-7129] Port address[14] in module data_memory is either unconnected or has no load
+WARNING: [Synth 8-7129] Port address[13] in module data_memory is either unconnected or has no load
+WARNING: [Synth 8-7129] Port address[12] in module data_memory is either unconnected or has no load
+WARNING: [Synth 8-7129] Port address[11] in module data_memory is either unconnected or has no load
+WARNING: [Synth 8-7129] Port address[10] in module data_memory is either unconnected or has no load
+WARNING: [Synth 8-7129] Port address[9] in module data_memory is either unconnected or has no load
+WARNING: [Synth 8-7129] Port address[8] in module data_memory is either unconnected or has no load
+---------------------------------------------------------------------------------
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:31 ; elapsed = 00:00:31 . Memory (MB): peak = 2698.922 ; gain = 847.281 ; free physical = 5312 ; free virtual = 180421
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Applying XDC Timing Constraints
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:35 ; elapsed = 00:00:36 . Memory (MB): peak = 2698.922 ; gain = 847.281 ; free physical = 5308 ; free virtual = 180420
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Timing Optimization
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Timing Optimization : Time (s): cpu = 00:00:47 ; elapsed = 00:00:47 . Memory (MB): peak = 2826.219 ; gain = 974.578 ; free physical = 5197 ; free virtual = 180317
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Technology Mapping
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Technology Mapping : Time (s): cpu = 00:00:49 ; elapsed = 00:00:49 . Memory (MB): peak = 2826.219 ; gain = 974.578 ; free physical = 5202 ; free virtual = 180322
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished IO Insertion : Time (s): cpu = 00:00:52 ; elapsed = 00:00:53 . Memory (MB): peak = 2941.031 ; gain = 1089.391 ; free physical = 5108 ; free virtual = 180212
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Instances
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Instances : Time (s): cpu = 00:00:52 ; elapsed = 00:00:53 . Memory (MB): peak = 2941.031 ; gain = 1089.391 ; free physical = 5108 ; free virtual = 180212
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Rebuilding User Hierarchy
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:53 ; elapsed = 00:00:54 . Memory (MB): peak = 2941.031 ; gain = 1089.391 ; free physical = 5104 ; free virtual = 180208
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Ports
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Ports : Time (s): cpu = 00:00:53 ; elapsed = 00:00:54 . Memory (MB): peak = 2941.031 ; gain = 1089.391 ; free physical = 5104 ; free virtual = 180208
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:54 ; elapsed = 00:00:55 . Memory (MB): peak = 2941.031 ; gain = 1089.391 ; free physical = 5102 ; free virtual = 180214
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Nets
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Nets : Time (s): cpu = 00:00:54 ; elapsed = 00:00:55 . Memory (MB): peak = 2941.031 ; gain = 1089.391 ; free physical = 5102 ; free virtual = 180214
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Writing Synthesis Report
+---------------------------------------------------------------------------------
+
+Report BlackBoxes: 
++-+--------------+----------+
+| |BlackBox name |Instances |
++-+--------------+----------+
++-+--------------+----------+
+
+Report Cell Usage: 
++------+-------+------+
+|      |Cell   |Count |
++------+-------+------+
+|1     |BUFG   |     2|
+|2     |CARRY4 |    23|
+|3     |LUT1   |    10|
+|4     |LUT2   |    52|
+|5     |LUT3   |   169|
+|6     |LUT4   |   791|
+|7     |LUT5   |  1160|
+|8     |LUT6   |  1769|
+|9     |MUXF7  |   186|
+|10    |MUXF8  |    17|
+|11    |FDRE   |  2352|
+|12    |IBUF   |     2|
+|13    |OBUF   |    16|
++------+-------+------+
+---------------------------------------------------------------------------------
+Finished Writing Synthesis Report : Time (s): cpu = 00:00:54 ; elapsed = 00:00:55 . Memory (MB): peak = 2941.031 ; gain = 1089.391 ; free physical = 5102 ; free virtual = 180214
+---------------------------------------------------------------------------------
+Synthesis finished with 0 errors, 0 critical warnings and 14 warnings.
+Synthesis Optimization Runtime : Time (s): cpu = 00:00:52 ; elapsed = 00:00:53 . Memory (MB): peak = 2941.031 ; gain = 981.891 ; free physical = 5102 ; free virtual = 180214
+Synthesis Optimization Complete : Time (s): cpu = 00:00:54 ; elapsed = 00:00:55 . Memory (MB): peak = 2941.039 ; gain = 1089.391 ; free physical = 5102 ; free virtual = 180214
+INFO: [Project 1-571] Translating synthesized netlist
+Netlist sorting complete. Time (s): cpu = 00:00:00.03 ; elapsed = 00:00:00.03 . Memory (MB): peak = 2941.039 ; gain = 0.000 ; free physical = 5264 ; free virtual = 180375
+INFO: [Netlist 29-17] Analyzing 226 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
+INFO: [Project 1-570] Preparing netlist for logic optimization
+INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
+Netlist sorting complete. Time (s): cpu = 00:00:00.01 ; elapsed = 00:00:00 . Memory (MB): peak = 2997.059 ; gain = 0.000 ; free physical = 5258 ; free virtual = 180370
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+Synth Design complete | Checksum: 60493021
+INFO: [Common 17-83] Releasing license: Vivado_Synthesis
+39 Infos, 42 Warnings, 0 Critical Warnings and 0 Errors encountered.
+synth_design completed successfully
+synth_design: Time (s): cpu = 00:01:02 ; elapsed = 00:01:00 . Memory (MB): peak = 2997.094 ; gain = 1288.664 ; free physical = 5258 ; free virtual = 180370
+INFO: [Common 17-2834] synth_design peak Physical Memory [PSS] (MB): overall = 2152.184; main = 2036.394; forked = 278.841
+INFO: [Common 17-2834] synth_design peak Virtual Memory [VSS] (MB): overall = 3859.062; main = 2997.062; forked = 1032.840
+Write ShapeDB Complete: Time (s): cpu = 00:00:00.01 ; elapsed = 00:00:00 . Memory (MB): peak = 3021.070 ; gain = 0.000 ; free physical = 5258 ; free virtual = 180370
+INFO: [Common 17-1381] The checkpoint '/home/noetherverse/Projects/cse490_16bit_processor/vivado/16bit_processor.runs/synth_1/board_top.dcp' has been generated.
+INFO: [Vivado 12-24828] Executing command : report_utilization -file board_top_utilization_synth.rpt -pb board_top_utilization_synth.pb
+INFO: [Common 17-206] Exiting Vivado at Sun Nov  1 16:42:03 2026...

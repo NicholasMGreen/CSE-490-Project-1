@@ -1,0 +1,353 @@
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2026 Advanced Micro Devices, Inc. All Rights Reserved.
+---------------------------------------------------------------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2026.1 (lin64) Build 6511674 Tue Jun 16 11:01:26 MDT 2026
+| Date         : Sun Nov  1 16:43:04 2026
+| Host         : pcexitnode running 64-bit unknown
+| Command      : report_control_sets -verbose -file board_top_control_sets_placed.rpt
+| Design       : board_top
+| Device       : xc7a35t
+---------------------------------------------------------------------------------------------------------------------------------------------
+
+Control Set Information
+
+Table of Contents
+-----------------
+1. Summary
+2. Histogram
+3. Flip-Flop Distribution
+4. Detailed Control Set Information
+
+1. Summary
+----------
+
++----------------------------------------------------------+-------+
+|                          Status                          | Count |
++----------------------------------------------------------+-------+
+| Total control sets                                       |   275 |
+|    Minimum number of control sets                        |   275 |
+|    Addition due to synthesis replication                 |     0 |
+|    Addition due to physical synthesis replication        |     0 |
+| Unused register locations in slices containing registers |     8 |
++----------------------------------------------------------+-------+
+* Control sets can be merged at opt_design using control_set_merge or merge_equivalent_drivers
+** Run report_qor_suggestions for automated merging and remapping suggestions
+
+
+2. Histogram
+------------
+
++--------------------+-------+
+|       Fanout       | Count |
++--------------------+-------+
+| Total control sets |   275 |
+| >= 0 to < 4        |     0 |
+| >= 4 to < 6        |     0 |
+| >= 6 to < 8        |     1 |
+| >= 8 to < 10       |   256 |
+| >= 10 to < 12      |     0 |
+| >= 12 to < 14      |     0 |
+| >= 14 to < 16      |     1 |
+| >= 16              |    17 |
++--------------------+-------+
+* Control sets can be remapped at either synth_design or opt_design
+
+
+3. Flip-Flop Distribution
+-------------------------
+
++--------------+-----------------------+------------------------+-----------------+--------------+
+| Clock Enable | Synchronous Set/Reset | Asynchronous Set/Reset | Total Registers | Total Slices |
++--------------+-----------------------+------------------------+-----------------+--------------+
+| No           | No                    | No                     |               6 |            2 |
+| No           | No                    | Yes                    |               0 |            0 |
+| No           | Yes                   | No                     |              42 |           14 |
+| Yes          | No                    | No                     |            2048 |          813 |
+| Yes          | No                    | Yes                    |               0 |            0 |
+| Yes          | Yes                   | No                     |             256 |          149 |
++--------------+-----------------------+------------------------+-----------------+--------------+
+
+
+4. Detailed Control Set Information
+-----------------------------------
+
++----------------+--------------------------------------+-------------------+------------------+----------------+--------------+
+|  Clock Signal  |             Enable Signal            |  Set/Reset Signal | Slice Load Count | Bel Load Count | Bels / Slice |
++----------------+--------------------------------------+-------------------+------------------+----------------+--------------+
+|  clk_IBUF_BUFG |                                      |                   |                2 |              6 |         3.00 |
+|  step_clk_BUFG | my_cpu/call_pc/mem[31][7]_i_3_11[0]  |                   |                6 |              8 |         1.33 |
+|  step_clk_BUFG | my_cpu/call_pc/mem[255][7]_i_3_0[0]  |                   |                3 |              8 |         2.67 |
+|  step_clk_BUFG | my_cpu/call_pc/mem[31][7]_i_3_10[0]  |                   |                2 |              8 |         4.00 |
+|  step_clk_BUFG | my_cpu/call_pc/mem[31][7]_i_3_1[0]   |                   |                3 |              8 |         2.67 |
+|  step_clk_BUFG | my_cpu/call_pc/mem[31][7]_i_3_0[0]   |                   |                5 |              8 |         1.60 |
+|  step_clk_BUFG | my_cpu/call_pc/mem[255][7]_i_7_4[0]  |                   |                4 |              8 |         2.00 |
+|  step_clk_BUFG | my_cpu/call_pc/mem[255][7]_i_7_3[0]  |                   |                2 |              8 |         4.00 |
+|  step_clk_BUFG | my_cpu/call_pc/mem[255][7]_i_7_2[0]  |                   |                3 |              8 |         2.67 |
+|  step_clk_BUFG | my_cpu/call_pc/mem[255][7]_i_7_1[0]  |                   |                4 |              8 |         2.00 |
+|  step_clk_BUFG | my_cpu/call_pc/mem[255][7]_i_7_0[0]  |                   |                4 |              8 |         2.00 |
+|  step_clk_BUFG | my_cpu/call_pc/mem[255][7]_i_6_0[0]  |                   |                3 |              8 |         2.67 |
+|  step_clk_BUFG | my_cpu/call_pc/mem[255][7]_i_4_3[0]  |                   |                2 |              8 |         4.00 |
+|  step_clk_BUFG | my_cpu/call_pc/mem[255][7]_i_4_2[0]  |                   |                3 |              8 |         2.67 |
+|  step_clk_BUFG | my_cpu/call_pc/mem[255][7]_i_4_1[0]  |                   |                3 |              8 |         2.67 |
+|  step_clk_BUFG | my_cpu/call_pc/mem[255][7]_i_4_0[0]  |                   |                4 |              8 |         2.00 |
+|  step_clk_BUFG | my_cpu/call_pc/mem[255][7]_i_3_1[0]  |                   |                5 |              8 |         1.60 |
+|  step_clk_BUFG | my_cpu/call_pc/mem[31][7]_i_3_6[0]   |                   |                3 |              8 |         2.67 |
+|  step_clk_BUFG | my_cpu/call_pc/mem[31][7]_i_3_12[0]  |                   |                2 |              8 |         4.00 |
+|  step_clk_BUFG | my_cpu/call_pc/mem[31][7]_i_3_13[0]  |                   |                4 |              8 |         2.00 |
+|  step_clk_BUFG | my_cpu/call_pc/mem[31][7]_i_3_14[0]  |                   |                2 |              8 |         4.00 |
+|  step_clk_BUFG | my_cpu/call_pc/mem[31][7]_i_3_15[0]  |                   |                2 |              8 |         4.00 |
+|  step_clk_BUFG | my_cpu/call_pc/mem[31][7]_i_3_16[0]  |                   |                5 |              8 |         1.60 |
+|  step_clk_BUFG | my_cpu/call_pc/mem[31][7]_i_3_17[0]  |                   |                2 |              8 |         4.00 |
+|  step_clk_BUFG | my_cpu/call_pc/mem[31][7]_i_3_18[0]  |                   |                2 |              8 |         4.00 |
+|  step_clk_BUFG | my_cpu/call_pc/mem[31][7]_i_3_19[0]  |                   |                4 |              8 |         2.00 |
+|  step_clk_BUFG | my_cpu/call_pc/mem[31][7]_i_3_2[0]   |                   |                2 |              8 |         4.00 |
+|  step_clk_BUFG | my_cpu/call_pc/mem[31][7]_i_3_20[0]  |                   |                3 |              8 |         2.67 |
+|  step_clk_BUFG | my_cpu/call_pc/mem[31][7]_i_3_21[0]  |                   |                4 |              8 |         2.00 |
+|  step_clk_BUFG | my_cpu/call_pc/mem[31][7]_i_3_22[0]  |                   |                2 |              8 |         4.00 |
+|  step_clk_BUFG | my_cpu/call_pc/mem[31][7]_i_3_3[0]   |                   |                3 |              8 |         2.67 |
+|  step_clk_BUFG | my_cpu/call_pc/mem[31][7]_i_3_4[0]   |                   |                4 |              8 |         2.00 |
+|  step_clk_BUFG | my_cpu/call_pc/mem[31][7]_i_3_5[0]   |                   |                4 |              8 |         2.00 |
+|  step_clk_BUFG | my_cpu/call_pc/mem[229][7]_i_3_0[0]  |                   |                3 |              8 |         2.67 |
+|  step_clk_BUFG | my_cpu/call_pc/mem[248][7]_i_3_0[0]  |                   |                4 |              8 |         2.00 |
+|  step_clk_BUFG | my_cpu/call_pc/mem[232][7]_i_3_0[0]  |                   |                4 |              8 |         2.00 |
+|  step_clk_BUFG | my_cpu/call_pc/mem[229][7]_i_3_1[0]  |                   |                3 |              8 |         2.67 |
+|  step_clk_BUFG | my_cpu/call_pc/mem[232][7]_i_3_1[0]  |                   |                4 |              8 |         2.00 |
+|  step_clk_BUFG | my_cpu/call_pc/mem[232][7]_i_3_2[0]  |                   |                3 |              8 |         2.67 |
+|  step_clk_BUFG | my_cpu/call_pc/mem[243][7]_i_4_0[0]  |                   |                3 |              8 |         2.67 |
+|  step_clk_BUFG | my_cpu/call_pc/mem[243][7]_i_4_1[0]  |                   |                3 |              8 |         2.67 |
+|  step_clk_BUFG | my_cpu/call_pc/mem[243][7]_i_4_2[0]  |                   |                3 |              8 |         2.67 |
+|  step_clk_BUFG | my_cpu/call_pc/mem[243][7]_i_4_3[0]  |                   |                2 |              8 |         4.00 |
+|  step_clk_BUFG | my_cpu/call_pc/mem[243][7]_i_4_4[0]  |                   |                4 |              8 |         2.00 |
+|  step_clk_BUFG | my_cpu/call_pc/mem[243][7]_i_4_5[0]  |                   |                4 |              8 |         2.00 |
+|  step_clk_BUFG | my_cpu/call_pc/mem[243][7]_i_4_6[0]  |                   |                5 |              8 |         1.60 |
+|  step_clk_BUFG | my_cpu/call_pc/mem[243][7]_i_4_7[0]  |                   |                3 |              8 |         2.67 |
+|  step_clk_BUFG | my_cpu/call_pc/mem[243][7]_i_4_8[0]  |                   |                5 |              8 |         1.60 |
+|  step_clk_BUFG | my_cpu/call_pc/mem[247][7]_i_3_0[0]  |                   |                5 |              8 |         1.60 |
+|  step_clk_BUFG | my_cpu/call_pc/mem[247][7]_i_3_1[0]  |                   |                4 |              8 |         2.00 |
+|  step_clk_BUFG | my_cpu/call_pc/mem[254][7]_i_4_8[0]  |                   |                3 |              8 |         2.67 |
+|  step_clk_BUFG | my_cpu/call_pc/mem[248][7]_i_4_0[0]  |                   |                2 |              8 |         4.00 |
+|  step_clk_BUFG | my_cpu/call_pc/mem[248][7]_i_6_0[0]  |                   |                3 |              8 |         2.67 |
+|  step_clk_BUFG | my_cpu/call_pc/mem[248][7]_i_6_1[0]  |                   |                6 |              8 |         1.33 |
+|  step_clk_BUFG | my_cpu/call_pc/mem[248][7]_i_6_2[0]  |                   |                3 |              8 |         2.67 |
+|  step_clk_BUFG | my_cpu/call_pc/mem[252][7]_i_4_0[0]  |                   |                5 |              8 |         1.60 |
+|  step_clk_BUFG | my_cpu/call_pc/mem[252][7]_i_4_1[0]  |                   |                3 |              8 |         2.67 |
+|  step_clk_BUFG | my_cpu/call_pc/mem[252][7]_i_4_2[0]  |                   |                3 |              8 |         2.67 |
+|  step_clk_BUFG | my_cpu/call_pc/mem[254][7]_i_4_0[0]  |                   |                5 |              8 |         1.60 |
+|  step_clk_BUFG | my_cpu/call_pc/mem[254][7]_i_4_1[0]  |                   |                3 |              8 |         2.67 |
+|  step_clk_BUFG | my_cpu/call_pc/mem[254][7]_i_4_2[0]  |                   |                6 |              8 |         1.33 |
+|  step_clk_BUFG | my_cpu/call_pc/mem[254][7]_i_4_3[0]  |                   |                2 |              8 |         4.00 |
+|  step_clk_BUFG | my_cpu/call_pc/mem[254][7]_i_4_4[0]  |                   |                6 |              8 |         1.33 |
+|  step_clk_BUFG | my_cpu/call_pc/mem[254][7]_i_4_5[0]  |                   |                2 |              8 |         4.00 |
+|  step_clk_BUFG | my_cpu/call_pc/mem[254][7]_i_4_6[0]  |                   |                3 |              8 |         2.67 |
+|  step_clk_BUFG | my_cpu/call_pc/mem[254][7]_i_4_7[0]  |                   |                3 |              8 |         2.67 |
+|  step_clk_BUFG | my_cpu/call_pc/mem[95][7]_i_3_15[0]  |                   |                3 |              8 |         2.67 |
+|  step_clk_BUFG | my_cpu/call_pc/mem[63][7]_i_3_3[0]   |                   |                5 |              8 |         1.60 |
+|  step_clk_BUFG | my_cpu/call_pc/mem[63][7]_i_3_4[0]   |                   |                4 |              8 |         2.00 |
+|  step_clk_BUFG | my_cpu/call_pc/mem[63][7]_i_3_5[0]   |                   |                2 |              8 |         4.00 |
+|  step_clk_BUFG | my_cpu/call_pc/mem[63][7]_i_3_6[0]   |                   |                3 |              8 |         2.67 |
+|  step_clk_BUFG | my_cpu/call_pc/mem[63][7]_i_3_7[0]   |                   |                5 |              8 |         1.60 |
+|  step_clk_BUFG | my_cpu/call_pc/mem[63][7]_i_3_8[0]   |                   |                5 |              8 |         1.60 |
+|  step_clk_BUFG | my_cpu/call_pc/mem[63][7]_i_3_9[0]   |                   |                4 |              8 |         2.00 |
+|  step_clk_BUFG | my_cpu/call_pc/mem[64][7]_i_3_0[0]   |                   |                3 |              8 |         2.67 |
+|  step_clk_BUFG | my_cpu/call_pc/mem[95][7]_i_3_0[0]   |                   |                4 |              8 |         2.00 |
+|  step_clk_BUFG | my_cpu/call_pc/mem[95][7]_i_3_1[0]   |                   |                5 |              8 |         1.60 |
+|  step_clk_BUFG | my_cpu/call_pc/mem[95][7]_i_3_10[0]  |                   |                4 |              8 |         2.00 |
+|  step_clk_BUFG | my_cpu/call_pc/mem[95][7]_i_3_11[0]  |                   |                5 |              8 |         1.60 |
+|  step_clk_BUFG | my_cpu/call_pc/mem[95][7]_i_3_12[0]  |                   |                5 |              8 |         1.60 |
+|  step_clk_BUFG | my_cpu/call_pc/mem[95][7]_i_3_13[0]  |                   |                4 |              8 |         2.00 |
+|  step_clk_BUFG | my_cpu/call_pc/mem[95][7]_i_3_14[0]  |                   |                4 |              8 |         2.00 |
+|  step_clk_BUFG | my_cpu/call_pc/mem[63][7]_i_3_2[0]   |                   |                2 |              8 |         4.00 |
+|  step_clk_BUFG | my_cpu/call_pc/mem[95][7]_i_3_16[0]  |                   |                3 |              8 |         2.67 |
+|  step_clk_BUFG | my_cpu/call_pc/mem[95][7]_i_3_17[0]  |                   |                4 |              8 |         2.00 |
+|  step_clk_BUFG | my_cpu/call_pc/mem[95][7]_i_3_18[0]  |                   |                3 |              8 |         2.67 |
+|  step_clk_BUFG | my_cpu/call_pc/mem[95][7]_i_3_19[0]  |                   |                2 |              8 |         4.00 |
+|  step_clk_BUFG | my_cpu/call_pc/mem[95][7]_i_3_2[0]   |                   |                4 |              8 |         2.00 |
+|  step_clk_BUFG | my_cpu/call_pc/mem[95][7]_i_3_20[0]  |                   |                2 |              8 |         4.00 |
+|  step_clk_BUFG | my_cpu/call_pc/mem[95][7]_i_3_21[0]  |                   |                4 |              8 |         2.00 |
+|  step_clk_BUFG | my_cpu/call_pc/mem[95][7]_i_3_22[0]  |                   |                2 |              8 |         4.00 |
+|  step_clk_BUFG | my_cpu/call_pc/mem[95][7]_i_3_3[0]   |                   |                2 |              8 |         4.00 |
+|  step_clk_BUFG | my_cpu/call_pc/mem[95][7]_i_3_4[0]   |                   |                5 |              8 |         1.60 |
+|  step_clk_BUFG | my_cpu/call_pc/mem[95][7]_i_3_5[0]   |                   |                4 |              8 |         2.00 |
+|  step_clk_BUFG | my_cpu/call_pc/mem[95][7]_i_3_6[0]   |                   |                2 |              8 |         4.00 |
+|  step_clk_BUFG | my_cpu/call_pc/mem[95][7]_i_3_7[0]   |                   |                3 |              8 |         2.67 |
+|  step_clk_BUFG | my_cpu/call_pc/mem[95][7]_i_3_8[0]   |                   |                3 |              8 |         2.67 |
+|  step_clk_BUFG | my_cpu/call_pc/mem[95][7]_i_3_9[0]   |                   |                3 |              8 |         2.67 |
+|  step_clk_BUFG | my_cpu/call_pc/mem[62][7]_i_3_6[0]   |                   |                1 |              8 |         8.00 |
+|  step_clk_BUFG | my_cpu/call_pc/mem[31][7]_i_3_8[0]   |                   |                3 |              8 |         2.67 |
+|  step_clk_BUFG | my_cpu/call_pc/mem[31][7]_i_3_9[0]   |                   |                3 |              8 |         2.67 |
+|  step_clk_BUFG | my_cpu/call_pc/mem[52][7]_i_3_0[0]   |                   |                4 |              8 |         2.00 |
+|  step_clk_BUFG | my_cpu/call_pc/mem[62][7]_i_3_0[0]   |                   |                3 |              8 |         2.67 |
+|  step_clk_BUFG | my_cpu/call_pc/mem[62][7]_i_3_1[0]   |                   |                2 |              8 |         4.00 |
+|  step_clk_BUFG | my_cpu/call_pc/mem[62][7]_i_3_10[0]  |                   |                1 |              8 |         8.00 |
+|  step_clk_BUFG | my_cpu/call_pc/mem[62][7]_i_3_11[0]  |                   |                3 |              8 |         2.67 |
+|  step_clk_BUFG | my_cpu/call_pc/mem[62][7]_i_3_12[0]  |                   |                2 |              8 |         4.00 |
+|  step_clk_BUFG | my_cpu/call_pc/mem[62][7]_i_3_13[0]  |                   |                2 |              8 |         4.00 |
+|  step_clk_BUFG | my_cpu/call_pc/mem[62][7]_i_3_14[0]  |                   |                2 |              8 |         4.00 |
+|  step_clk_BUFG | my_cpu/call_pc/mem[62][7]_i_3_15[0]  |                   |                3 |              8 |         2.67 |
+|  step_clk_BUFG | my_cpu/call_pc/mem[62][7]_i_3_2[0]   |                   |                1 |              8 |         8.00 |
+|  step_clk_BUFG | my_cpu/call_pc/mem[62][7]_i_3_3[0]   |                   |                5 |              8 |         1.60 |
+|  step_clk_BUFG | my_cpu/call_pc/mem[62][7]_i_3_4[0]   |                   |                2 |              8 |         4.00 |
+|  step_clk_BUFG | my_cpu/call_pc/mem[62][7]_i_3_5[0]   |                   |                3 |              8 |         2.67 |
+|  step_clk_BUFG | my_cpu/call_pc/mem[31][7]_i_3_7[0]   |                   |                5 |              8 |         1.60 |
+|  step_clk_BUFG | my_cpu/call_pc/mem[62][7]_i_3_7[0]   |                   |                3 |              8 |         2.67 |
+|  step_clk_BUFG | my_cpu/call_pc/mem[62][7]_i_3_8[0]   |                   |                4 |              8 |         2.00 |
+|  step_clk_BUFG | my_cpu/call_pc/mem[62][7]_i_3_9[0]   |                   |                5 |              8 |         1.60 |
+|  step_clk_BUFG | my_cpu/call_pc/mem[63][7]_i_3_0[0]   |                   |                4 |              8 |         2.00 |
+|  step_clk_BUFG | my_cpu/call_pc/mem[63][7]_i_3_1[0]   |                   |                4 |              8 |         2.00 |
+|  step_clk_BUFG | my_cpu/call_pc/mem[63][7]_i_3_10[0]  |                   |                4 |              8 |         2.00 |
+|  step_clk_BUFG | my_cpu/call_pc/mem[63][7]_i_3_11[0]  |                   |                5 |              8 |         1.60 |
+|  step_clk_BUFG | my_cpu/call_pc/mem[63][7]_i_3_12[0]  |                   |                6 |              8 |         1.33 |
+|  step_clk_BUFG | my_cpu/call_pc/mem[63][7]_i_3_13[0]  |                   |                5 |              8 |         1.60 |
+|  step_clk_BUFG | my_cpu/call_pc/mem[63][7]_i_3_14[0]  |                   |                4 |              8 |         2.00 |
+|  step_clk_BUFG | my_cpu/call_pc/mem[63][7]_i_3_15[0]  |                   |                4 |              8 |         2.00 |
+|  step_clk_BUFG | my_cpu/call_pc/mem[63][7]_i_3_16[0]  |                   |                2 |              8 |         4.00 |
+|  step_clk_BUFG | my_cpu/call_pc/mem[63][7]_i_3_17[0]  |                   |                3 |              8 |         2.67 |
+|  step_clk_BUFG | my_cpu/call_pc/mem[63][7]_i_3_18[0]  |                   |                5 |              8 |         1.60 |
+|  step_clk_BUFG | my_cpu/call_pc/mem[63][7]_i_3_19[0]  |                   |                3 |              8 |         2.67 |
+|  step_clk_BUFG | my_cpu/call_pc/mem[159][7]_i_3_14[0] |                   |                3 |              8 |         2.67 |
+|  step_clk_BUFG | my_cpu/call_pc/mem[127][7]_i_3_3[0]  |                   |                3 |              8 |         2.67 |
+|  step_clk_BUFG | my_cpu/call_pc/mem[127][7]_i_3_4[0]  |                   |                3 |              8 |         2.67 |
+|  step_clk_BUFG | my_cpu/call_pc/mem[127][7]_i_3_5[0]  |                   |                5 |              8 |         1.60 |
+|  step_clk_BUFG | my_cpu/call_pc/mem[127][7]_i_3_6[0]  |                   |                4 |              8 |         2.00 |
+|  step_clk_BUFG | my_cpu/call_pc/mem[127][7]_i_3_7[0]  |                   |                2 |              8 |         4.00 |
+|  step_clk_BUFG | my_cpu/call_pc/mem[127][7]_i_3_8[0]  |                   |                3 |              8 |         2.67 |
+|  step_clk_BUFG | my_cpu/call_pc/mem[127][7]_i_3_9[0]  |                   |                4 |              8 |         2.00 |
+|  step_clk_BUFG | my_cpu/call_pc/mem[128][7]_i_3_0[0]  |                   |                3 |              8 |         2.67 |
+|  step_clk_BUFG | my_cpu/call_pc/mem[128][7]_i_3_1[0]  |                   |                3 |              8 |         2.67 |
+|  step_clk_BUFG | my_cpu/call_pc/mem[159][7]_i_3_0[0]  |                   |                3 |              8 |         2.67 |
+|  step_clk_BUFG | my_cpu/call_pc/mem[159][7]_i_3_1[0]  |                   |                2 |              8 |         4.00 |
+|  step_clk_BUFG | my_cpu/call_pc/mem[159][7]_i_3_10[0] |                   |                3 |              8 |         2.67 |
+|  step_clk_BUFG | my_cpu/call_pc/mem[159][7]_i_3_11[0] |                   |                3 |              8 |         2.67 |
+|  step_clk_BUFG | my_cpu/call_pc/mem[159][7]_i_3_12[0] |                   |                3 |              8 |         2.67 |
+|  step_clk_BUFG | my_cpu/call_pc/mem[159][7]_i_3_13[0] |                   |                3 |              8 |         2.67 |
+|  step_clk_BUFG | my_cpu/call_pc/mem[127][7]_i_3_22[0] |                   |                3 |              8 |         2.67 |
+|  step_clk_BUFG | my_cpu/call_pc/mem[159][7]_i_3_15[0] |                   |                3 |              8 |         2.67 |
+|  step_clk_BUFG | my_cpu/call_pc/mem[159][7]_i_3_16[0] |                   |                2 |              8 |         4.00 |
+|  step_clk_BUFG | my_cpu/call_pc/mem[159][7]_i_3_17[0] |                   |                3 |              8 |         2.67 |
+|  step_clk_BUFG | my_cpu/call_pc/mem[159][7]_i_3_18[0] |                   |                2 |              8 |         4.00 |
+|  step_clk_BUFG | my_cpu/call_pc/mem[159][7]_i_3_19[0] |                   |                3 |              8 |         2.67 |
+|  step_clk_BUFG | my_cpu/call_pc/mem[159][7]_i_3_2[0]  |                   |                2 |              8 |         4.00 |
+|  step_clk_BUFG | my_cpu/call_pc/mem[159][7]_i_3_20[0] |                   |                2 |              8 |         4.00 |
+|  step_clk_BUFG | my_cpu/call_pc/mem[159][7]_i_3_21[0] |                   |                3 |              8 |         2.67 |
+|  step_clk_BUFG | my_cpu/call_pc/mem[159][7]_i_3_22[0] |                   |                3 |              8 |         2.67 |
+|  step_clk_BUFG | my_cpu/call_pc/mem[159][7]_i_3_3[0]  |                   |                3 |              8 |         2.67 |
+|  step_clk_BUFG | my_cpu/call_pc/mem[159][7]_i_3_4[0]  |                   |                2 |              8 |         4.00 |
+|  step_clk_BUFG | my_cpu/call_pc/mem[159][7]_i_3_5[0]  |                   |                3 |              8 |         2.67 |
+|  step_clk_BUFG | my_cpu/call_pc/mem[159][7]_i_3_6[0]  |                   |                2 |              8 |         4.00 |
+|  step_clk_BUFG | my_cpu/call_pc/mem[159][7]_i_3_7[0]  |                   |                3 |              8 |         2.67 |
+|  step_clk_BUFG | my_cpu/call_pc/mem[159][7]_i_3_8[0]  |                   |                3 |              8 |         2.67 |
+|  step_clk_BUFG | my_cpu/call_pc/mem[126][7]_i_3_9[0]  |                   |                3 |              8 |         2.67 |
+|  step_clk_BUFG | my_cpu/call_pc/mem[126][7]_i_3_0[0]  |                   |                1 |              8 |         8.00 |
+|  step_clk_BUFG | my_cpu/call_pc/mem[126][7]_i_3_1[0]  |                   |                3 |              8 |         2.67 |
+|  step_clk_BUFG | my_cpu/call_pc/mem[126][7]_i_3_10[0] |                   |                1 |              8 |         8.00 |
+|  step_clk_BUFG | my_cpu/call_pc/mem[126][7]_i_3_15[0] |                   |                5 |              8 |         1.60 |
+|  step_clk_BUFG | my_cpu/call_pc/mem[126][7]_i_3_11[0] |                   |                1 |              8 |         8.00 |
+|  step_clk_BUFG | my_cpu/call_pc/mem[126][7]_i_3_12[0] |                   |                3 |              8 |         2.67 |
+|  step_clk_BUFG | my_cpu/call_pc/mem[126][7]_i_3_13[0] |                   |                2 |              8 |         4.00 |
+|  step_clk_BUFG | my_cpu/call_pc/mem[126][7]_i_3_14[0] |                   |                1 |              8 |         8.00 |
+|  step_clk_BUFG | my_cpu/call_pc/mem[126][7]_i_3_2[0]  |                   |                2 |              8 |         4.00 |
+|  step_clk_BUFG | my_cpu/call_pc/mem[126][7]_i_3_3[0]  |                   |                1 |              8 |         8.00 |
+|  step_clk_BUFG | my_cpu/call_pc/mem[126][7]_i_3_4[0]  |                   |                4 |              8 |         2.00 |
+|  step_clk_BUFG | my_cpu/call_pc/mem[126][7]_i_3_5[0]  |                   |                4 |              8 |         2.00 |
+|  step_clk_BUFG | my_cpu/call_pc/mem[126][7]_i_3_6[0]  |                   |                1 |              8 |         8.00 |
+|  step_clk_BUFG | my_cpu/call_pc/mem[126][7]_i_3_7[0]  |                   |                1 |              8 |         8.00 |
+|  step_clk_BUFG | my_cpu/call_pc/mem[126][7]_i_3_8[0]  |                   |                4 |              8 |         2.00 |
+|  step_clk_BUFG | my_cpu/call_pc/mem[223][7]_i_3_9[0]  |                   |                2 |              8 |         4.00 |
+|  step_clk_BUFG | my_cpu/call_pc/mem[127][7]_i_3_0[0]  |                   |                2 |              8 |         4.00 |
+|  step_clk_BUFG | my_cpu/call_pc/mem[127][7]_i_3_1[0]  |                   |                6 |              8 |         1.33 |
+|  step_clk_BUFG | my_cpu/call_pc/mem[127][7]_i_3_10[0] |                   |                3 |              8 |         2.67 |
+|  step_clk_BUFG | my_cpu/call_pc/mem[127][7]_i_3_11[0] |                   |                4 |              8 |         2.00 |
+|  step_clk_BUFG | my_cpu/call_pc/mem[127][7]_i_3_12[0] |                   |                4 |              8 |         2.00 |
+|  step_clk_BUFG | my_cpu/call_pc/mem[127][7]_i_3_13[0] |                   |                4 |              8 |         2.00 |
+|  step_clk_BUFG | my_cpu/call_pc/mem[127][7]_i_3_14[0] |                   |                3 |              8 |         2.67 |
+|  step_clk_BUFG | my_cpu/call_pc/mem[127][7]_i_3_15[0] |                   |                3 |              8 |         2.67 |
+|  step_clk_BUFG | my_cpu/call_pc/mem[127][7]_i_3_16[0] |                   |                3 |              8 |         2.67 |
+|  step_clk_BUFG | my_cpu/call_pc/mem[127][7]_i_3_17[0] |                   |                2 |              8 |         4.00 |
+|  step_clk_BUFG | my_cpu/call_pc/mem[127][7]_i_3_18[0] |                   |                5 |              8 |         1.60 |
+|  step_clk_BUFG | my_cpu/call_pc/mem[127][7]_i_3_19[0] |                   |                4 |              8 |         2.00 |
+|  step_clk_BUFG | my_cpu/call_pc/mem[127][7]_i_3_2[0]  |                   |                4 |              8 |         2.00 |
+|  step_clk_BUFG | my_cpu/call_pc/mem[127][7]_i_3_20[0] |                   |                4 |              8 |         2.00 |
+|  step_clk_BUFG | my_cpu/call_pc/mem[127][7]_i_3_21[0] |                   |                3 |              8 |         2.67 |
+|  step_clk_BUFG | my_cpu/call_pc/mem[223][7]_i_3_12[0] |                   |                4 |              8 |         2.00 |
+|  step_clk_BUFG | my_cpu/call_pc/mem[191][7]_i_3_22[0] |                   |                3 |              8 |         2.67 |
+|  step_clk_BUFG | my_cpu/call_pc/mem[191][7]_i_3_3[0]  |                   |                7 |              8 |         1.14 |
+|  step_clk_BUFG | my_cpu/call_pc/mem[191][7]_i_3_4[0]  |                   |                3 |              8 |         2.67 |
+|  step_clk_BUFG | my_cpu/call_pc/mem[191][7]_i_3_5[0]  |                   |                3 |              8 |         2.67 |
+|  step_clk_BUFG | my_cpu/call_pc/mem[191][7]_i_3_6[0]  |                   |                3 |              8 |         2.67 |
+|  step_clk_BUFG | my_cpu/call_pc/mem[191][7]_i_3_7[0]  |                   |                2 |              8 |         4.00 |
+|  step_clk_BUFG | my_cpu/call_pc/mem[191][7]_i_3_8[0]  |                   |                3 |              8 |         2.67 |
+|  step_clk_BUFG | my_cpu/call_pc/mem[191][7]_i_3_9[0]  |                   |                3 |              8 |         2.67 |
+|  step_clk_BUFG | my_cpu/call_pc/mem[192][7]_i_5_0[0]  |                   |                3 |              8 |         2.67 |
+|  step_clk_BUFG | my_cpu/call_pc/mem[192][7]_i_5_1[0]  |                   |                2 |              8 |         4.00 |
+|  step_clk_BUFG | my_cpu/call_pc/mem[192][7]_i_6_0[0]  |                   |                6 |              8 |         1.33 |
+|  step_clk_BUFG | my_cpu/call_pc/mem[223][7]_i_3_0[0]  |                   |                3 |              8 |         2.67 |
+|  step_clk_BUFG | my_cpu/call_pc/mem[223][7]_i_3_1[0]  |                   |                2 |              8 |         4.00 |
+|  step_clk_BUFG | my_cpu/call_pc/mem[223][7]_i_3_10[0] |                   |                4 |              8 |         2.00 |
+|  step_clk_BUFG | my_cpu/call_pc/mem[223][7]_i_3_11[0] |                   |                3 |              8 |         2.67 |
+|  step_clk_BUFG | my_cpu/call_pc/mem[190][7]_i_3_0[0]  |                   |                2 |              8 |         4.00 |
+|  step_clk_BUFG | my_cpu/call_pc/mem[223][7]_i_3_13[0] |                   |                2 |              8 |         4.00 |
+|  step_clk_BUFG | my_cpu/call_pc/mem[223][7]_i_3_14[0] |                   |                4 |              8 |         2.00 |
+|  step_clk_BUFG | my_cpu/call_pc/mem[223][7]_i_3_15[0] |                   |                3 |              8 |         2.67 |
+|  step_clk_BUFG | my_cpu/call_pc/mem[223][7]_i_3_16[0] |                   |                3 |              8 |         2.67 |
+|  step_clk_BUFG | my_cpu/call_pc/mem[223][7]_i_3_17[0] |                   |                3 |              8 |         2.67 |
+|  step_clk_BUFG | my_cpu/call_pc/mem[223][7]_i_3_18[0] |                   |                4 |              8 |         2.00 |
+|  step_clk_BUFG | my_cpu/call_pc/mem[223][7]_i_3_19[0] |                   |                3 |              8 |         2.67 |
+|  step_clk_BUFG | my_cpu/call_pc/mem[223][7]_i_3_2[0]  |                   |                2 |              8 |         4.00 |
+|  step_clk_BUFG | my_cpu/call_pc/mem[223][7]_i_3_3[0]  |                   |                3 |              8 |         2.67 |
+|  step_clk_BUFG | my_cpu/call_pc/mem[223][7]_i_3_4[0]  |                   |                3 |              8 |         2.67 |
+|  step_clk_BUFG | my_cpu/call_pc/mem[223][7]_i_3_5[0]  |                   |                2 |              8 |         4.00 |
+|  step_clk_BUFG | my_cpu/call_pc/mem[223][7]_i_3_6[0]  |                   |                2 |              8 |         4.00 |
+|  step_clk_BUFG | my_cpu/call_pc/mem[223][7]_i_3_7[0]  |                   |                4 |              8 |         2.00 |
+|  step_clk_BUFG | my_cpu/call_pc/mem[223][7]_i_3_8[0]  |                   |                1 |              8 |         8.00 |
+|  step_clk_BUFG | my_cpu/call_pc/mem[224][7]_i_3_0[0]  |                   |                2 |              8 |         4.00 |
+|  step_clk_BUFG | my_cpu/call_pc/mem[191][7]_i_3_20[0] |                   |                3 |              8 |         2.67 |
+|  step_clk_BUFG | my_cpu/call_pc/mem[159][7]_i_3_9[0]  |                   |                3 |              8 |         2.67 |
+|  step_clk_BUFG | my_cpu/call_pc/mem[190][7]_i_3_1[0]  |                   |                3 |              8 |         2.67 |
+|  step_clk_BUFG | my_cpu/call_pc/mem[190][7]_i_3_10[0] |                   |                2 |              8 |         4.00 |
+|  step_clk_BUFG | my_cpu/call_pc/mem[190][7]_i_3_11[0] |                   |                1 |              8 |         8.00 |
+|  step_clk_BUFG | my_cpu/call_pc/mem[190][7]_i_3_12[0] |                   |                4 |              8 |         2.00 |
+|  step_clk_BUFG | my_cpu/call_pc/mem[190][7]_i_3_13[0] |                   |                3 |              8 |         2.67 |
+|  step_clk_BUFG | my_cpu/call_pc/mem[190][7]_i_3_14[0] |                   |                4 |              8 |         2.00 |
+|  step_clk_BUFG | my_cpu/call_pc/mem[190][7]_i_3_15[0] |                   |                5 |              8 |         1.60 |
+|  step_clk_BUFG | my_cpu/call_pc/mem[190][7]_i_3_2[0]  |                   |                2 |              8 |         4.00 |
+|  step_clk_BUFG | my_cpu/call_pc/mem[190][7]_i_3_3[0]  |                   |                2 |              8 |         4.00 |
+|  step_clk_BUFG | my_cpu/call_pc/mem[190][7]_i_3_4[0]  |                   |                4 |              8 |         2.00 |
+|  step_clk_BUFG | my_cpu/call_pc/mem[190][7]_i_3_5[0]  |                   |                3 |              8 |         2.67 |
+|  step_clk_BUFG | my_cpu/call_pc/mem[190][7]_i_3_6[0]  |                   |                2 |              8 |         4.00 |
+|  step_clk_BUFG | my_cpu/call_pc/mem[190][7]_i_3_7[0]  |                   |                2 |              8 |         4.00 |
+|  step_clk_BUFG | my_cpu/call_pc/mem[190][7]_i_3_8[0]  |                   |                3 |              8 |         2.67 |
+|  step_clk_BUFG | my_cpu/call_pc/mem[191][7]_i_3_0[0]  |                   |                3 |              8 |         2.67 |
+|  step_clk_BUFG | my_cpu/call_pc/mem[191][7]_i_3_21[0] |                   |                3 |              8 |         2.67 |
+|  step_clk_BUFG | my_cpu/call_pc/mem[191][7]_i_3_2[0]  |                   |                3 |              8 |         2.67 |
+|  step_clk_BUFG | my_cpu/call_pc/mem[191][7]_i_3_19[0] |                   |                3 |              8 |         2.67 |
+|  step_clk_BUFG | my_cpu/call_pc/mem[191][7]_i_3_18[0] |                   |                2 |              8 |         4.00 |
+|  step_clk_BUFG | my_cpu/call_pc/mem[191][7]_i_3_17[0] |                   |                3 |              8 |         2.67 |
+|  step_clk_BUFG | my_cpu/call_pc/mem[191][7]_i_3_16[0] |                   |                4 |              8 |         2.00 |
+|  step_clk_BUFG | my_cpu/call_pc/mem[191][7]_i_3_15[0] |                   |                2 |              8 |         4.00 |
+|  step_clk_BUFG | my_cpu/call_pc/mem[191][7]_i_3_14[0] |                   |                4 |              8 |         2.00 |
+|  step_clk_BUFG | my_cpu/call_pc/mem[191][7]_i_3_13[0] |                   |                2 |              8 |         4.00 |
+|  step_clk_BUFG | my_cpu/call_pc/mem[191][7]_i_3_12[0] |                   |                3 |              8 |         2.67 |
+|  step_clk_BUFG | my_cpu/call_pc/mem[191][7]_i_3_11[0] |                   |                3 |              8 |         2.67 |
+|  step_clk_BUFG | my_cpu/call_pc/mem[191][7]_i_3_10[0] |                   |                2 |              8 |         4.00 |
+|  step_clk_BUFG | my_cpu/call_pc/mem[191][7]_i_3_1[0]  |                   |                3 |              8 |         2.67 |
+|  step_clk_BUFG | my_cpu/call_pc/mem[190][7]_i_3_9[0]  |                   |                2 |              8 |         4.00 |
+|  step_clk_BUFG |                                      | rst_phase_reg_n_0 |                7 |             15 |         2.14 |
+|  step_clk_BUFG | my_cpu/call_pc/pc_reg[7]_27[0]       | rst_phase_reg_n_0 |               12 |             16 |         1.33 |
+|  step_clk_BUFG | my_cpu/call_pc/pc_reg[7]_26[0]       | rst_phase_reg_n_0 |                9 |             16 |         1.78 |
+|  step_clk_BUFG | my_cpu/call_pc/pc_reg[7]_25[0]       | rst_phase_reg_n_0 |               10 |             16 |         1.60 |
+|  step_clk_BUFG | my_cpu/call_pc/pc_reg[7]_24[0]       | rst_phase_reg_n_0 |                8 |             16 |         2.00 |
+|  step_clk_BUFG | my_cpu/call_pc/pc_reg[7]_23[0]       | rst_phase_reg_n_0 |                8 |             16 |         2.00 |
+|  step_clk_BUFG | my_cpu/call_pc/pc_reg[7]_22[0]       | rst_phase_reg_n_0 |                8 |             16 |         2.00 |
+|  step_clk_BUFG | my_cpu/call_pc/pc_reg[7]_21[0]       | rst_phase_reg_n_0 |                6 |             16 |         2.67 |
+|  step_clk_BUFG | my_cpu/call_pc/pc_reg[7]_20[0]       | rst_phase_reg_n_0 |                8 |             16 |         2.00 |
+|  step_clk_BUFG | my_cpu/call_pc/pc_reg[7]_19[0]       | rst_phase_reg_n_0 |                9 |             16 |         1.78 |
+|  step_clk_BUFG | my_cpu/call_pc/pc_reg[7]_18[0]       | rst_phase_reg_n_0 |                8 |             16 |         2.00 |
+|  step_clk_BUFG | my_cpu/call_pc/pc_reg[7]_17[0]       | rst_phase_reg_n_0 |               10 |             16 |         1.60 |
+|  step_clk_BUFG | my_cpu/call_pc/pc_reg[7]_16[0]       | rst_phase_reg_n_0 |               12 |             16 |         1.33 |
+|  step_clk_BUFG | my_cpu/call_pc/pc_reg[7]_15[0]       | rst_phase_reg_n_0 |               12 |             16 |         1.33 |
+|  step_clk_BUFG | my_cpu/call_pc/pc_reg[7]_14[0]       | rst_phase_reg_n_0 |               10 |             16 |         1.60 |
+|  step_clk_BUFG | my_cpu/call_pc/pc_reg[7]_13[0]       | rst_phase_reg_n_0 |                8 |             16 |         2.00 |
+|  step_clk_BUFG | my_cpu/call_pc/E[0]                  | rst_phase_reg_n_0 |               11 |             16 |         1.45 |
+|  clk_IBUF_BUFG |                                      | tick              |                7 |             27 |         3.86 |
++----------------+--------------------------------------+-------------------+------------------+----------------+--------------+
+
+

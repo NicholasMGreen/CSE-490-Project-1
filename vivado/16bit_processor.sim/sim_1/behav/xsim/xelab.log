@@ -1,0 +1,23 @@
+Vivado Simulator v2026.1
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+Copyright 2022-2026 Advanced Micro Devices, Inc. All Rights Reserved.
+Running: /home/noetherverse/Xilinx/2026.1/Vivado/bin/unwrapped/lnx64.o/xelab xil_defaultlib.diag_tb -s diag5 -debug typical 
+Multi-threading is on. Using 6 slave threads.
+Starting static elaboration
+Pass Through NonSizing Optimizer
+Completed static elaboration
+Starting simulation data flow analysis
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling module xil_defaultlib.instruction_memory
+Compiling module xil_defaultlib.data_memory
+Compiling module xil_defaultlib.control_unit
+Compiling module xil_defaultlib.mux2
+Compiling module xil_defaultlib.register_file
+Compiling module xil_defaultlib.sign_extension
+Compiling module xil_defaultlib.alu
+Compiling module xil_defaultlib.pc
+Compiling module xil_defaultlib.sign_extension_12bit
+Compiling module xil_defaultlib.wiring
+Compiling module xil_defaultlib.diag_tb
+Built simulation snapshot diag5

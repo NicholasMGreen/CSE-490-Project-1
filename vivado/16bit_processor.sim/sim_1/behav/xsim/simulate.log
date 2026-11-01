@@ -1,0 +1,13 @@
+Time resolution is 1 ps
+PASS: all 10 instructions verifie
+All Test done
+$finish called at time : 2006 ns : File "/home/noetherverse/Projects/cse490_16bit_processor/vivado/16bit_processor.srcs/sim_1/new/test_all.v" Line 36
+The current simulation has finished. Please use 'restart' to begin a new simulation.
+$finish called at time : 2006 ns : File "/home/noetherverse/Projects/cse490_16bit_processor/vivado/16bit_processor.srcs/sim_1/new/test_all.v" Line 36
+The current simulation has finished. Please use 'restart' to begin a new simulation.
+$finish called at time : 2006 ns : File "/home/noetherverse/Projects/cse490_16bit_processor/vivado/16bit_processor.srcs/sim_1/new/test_all.v" Line 36
+The current simulation has finished. Please use 'restart' to begin a new simulation.
+$finish called at time : 2006 ns : File "/home/noetherverse/Projects/cse490_16bit_processor/vivado/16bit_processor.srcs/sim_1/new/test_all.v" Line 36
+The current simulation has finished. Please use 'restart' to begin a new simulation.
+$finish called at time : 2006 ns : File "/home/noetherverse/Projects/cse490_16bit_processor/vivado/16bit_processor.srcs/sim_1/new/test_all.v" Line 36
+INFO: xsimkernel Simulation Memory Usage: 287728 KB (Peak: 345260 KB), Simulation CPU Usage: 1250 ms

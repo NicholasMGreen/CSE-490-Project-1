@@ -1,0 +1,24 @@
+#-----------------------------------------------------------
+# Vivado v2026.1 (64-bit)
+# SW Build 6511674 on Tue Jun 16 11:01:26 MDT 2026
+# IP Build 6504888 on Tue Jun 09 09:05:25 MDT 2026
+# SharedData Build 6501428 on Mon Jun 08 17:34:18 MDT 2026
+# Start of session at: Sat Oct 31 17:11:08 2026
+# Process ID         : 3701614
+# Current directory  : /home/noetherverse/Projects/cse490_16bit_processor/vivado/16bit_processor.runs/impl_1
+# Command line       : vivado -log board_top.vdi -applog -product Vivado -messageDb vivado.pb -mode batch -source board_top.tcl -notrace
+# Log file           : /home/noetherverse/Projects/cse490_16bit_processor/vivado/16bit_processor.runs/impl_1/board_top.vdi
+# Journal file       : /home/noetherverse/Projects/cse490_16bit_processor/vivado/16bit_processor.runs/impl_1/vivado.jou
+# Running On         : pcexitnode
+# Platform           : unknown
+# Operating System   : unknown
+# Processor Detail   : Intel(R) Core(TM) i3-10100 CPU @ 3.60GHz
+# CPU Frequency      : 4196.606 MHz
+# CPU Physical cores : 4
+# CPU Logical cores  : 8
+# Host memory        : 67146 MB
+# Swap memory        : 134298 MB
+# Total Virtual      : 201445 MB
+# Available Virtual  : 190389 MB
+#-----------------------------------------------------------
+source board_top.tcl -notrace

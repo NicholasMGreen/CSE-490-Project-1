@@ -1,0 +1,1 @@
+"xil_defaultlib.test_all" -s "test_all_run" -debug "typical" 

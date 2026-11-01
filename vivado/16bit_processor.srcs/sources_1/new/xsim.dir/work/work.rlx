@@ -1,0 +1,12 @@
+0.7
+2020.2
+Jun 16 2026
+11:12:08
+/home/noetherverse/Projects/cse490_16bit_processor/vivado/16bit_processor.srcs/sources_1/new/alu.v,1792628184,verilog,,/home/noetherverse/Projects/cse490_16bit_processor/vivado/16bit_processor.srcs/sources_1/new/control_unit.v,,alu,,,,,,,,
+/home/noetherverse/Projects/cse490_16bit_processor/vivado/16bit_processor.srcs/sources_1/new/control_unit.v,1792628184,verilog,,/home/noetherverse/Projects/cse490_16bit_processor/vivado/16bit_processor.srcs/sources_1/new/instruction_memory.v,,control_unit,,,,,,,,
+/home/noetherverse/Projects/cse490_16bit_processor/vivado/16bit_processor.srcs/sources_1/new/instruction_memory.v,1792329543,verilog,,/home/noetherverse/Projects/cse490_16bit_processor/vivado/16bit_processor.srcs/sources_1/new/mux2.v,,instruction_memory,,,,,,,,
+/home/noetherverse/Projects/cse490_16bit_processor/vivado/16bit_processor.srcs/sources_1/new/mux2.v,1792628184,verilog,,/home/noetherverse/Projects/cse490_16bit_processor/vivado/16bit_processor.srcs/sources_1/new/pc.v,,mux2,,,,,,,,
+/home/noetherverse/Projects/cse490_16bit_processor/vivado/16bit_processor.srcs/sources_1/new/pc.v,1792628184,verilog,,/home/noetherverse/Projects/cse490_16bit_processor/vivado/16bit_processor.srcs/sources_1/new/register_file.v,,pc,,,,,,,,
+/home/noetherverse/Projects/cse490_16bit_processor/vivado/16bit_processor.srcs/sources_1/new/register_file.v,1792329543,verilog,,/home/noetherverse/Projects/cse490_16bit_processor/vivado/16bit_processor.srcs/sources_1/new/sign_extension.v,,register_file,,,,,,,,
+/home/noetherverse/Projects/cse490_16bit_processor/vivado/16bit_processor.srcs/sources_1/new/sign_extension.v,1792358724,verilog,,/home/noetherverse/Projects/cse490_16bit_processor/vivado/16bit_processor.srcs/sources_1/new/wiring.v,,sign_extension,,,,,,,,
+/home/noetherverse/Projects/cse490_16bit_processor/vivado/16bit_processor.srcs/sources_1/new/wiring.v,1792628184,verilog,,,,wiring,,,,,,,,

@@ -1,0 +1,1 @@
+"xil_defaultlib.diag_tb" -s "diag3" -debug "typical" 

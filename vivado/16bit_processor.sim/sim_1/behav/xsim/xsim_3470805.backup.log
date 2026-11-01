@@ -1,0 +1,110 @@
+#-----------------------------------------------------------
+# xsim v2026.1 (64-bit)
+# SW Build 6511674 on Tue Jun 16 11:01:26 MDT 2026
+# IP Build 6504888 on Tue Jun 09 09:05:25 MDT 2026
+# SharedData Build 6501428 on Mon Jun 08 17:34:18 MDT 2026
+# Start of session at: Thu Oct 29 23:27:44 2026
+# Process ID         : 3470805
+# Current directory  : /home/noetherverse/Projects/cse490_16bit_processor/vivado/16bit_processor.sim/sim_1/behav/xsim
+# Command line       : xsim -mode tcl -source {xsim.dir/diag4/xsim_script.tcl}
+# Log file           : /home/noetherverse/Projects/cse490_16bit_processor/vivado/16bit_processor.sim/sim_1/behav/xsim/xsim.log
+# Journal file       : /home/noetherverse/Projects/cse490_16bit_processor/vivado/16bit_processor.sim/sim_1/behav/xsim/xsim.jou
+# Running On         : pcexitnode
+# Platform           : unknown
+# Operating System   : unknown
+# Processor Detail   : Intel(R) Core(TM) i3-10100 CPU @ 3.60GHz
+# CPU Frequency      : 4105.697 MHz
+# CPU Physical cores : 4
+# CPU Logical cores  : 8
+# Host memory        : 67146 MB
+# Swap memory        : 134298 MB
+# Total Virtual      : 201445 MB
+# Available Virtual  : 190801 MB
+#-----------------------------------------------------------
+source xsim.dir/diag4/xsim_script.tcl
+# xsim {diag4} -autoloadwcfg -tclbatch {/tmp/diag4.tcl}
+Time resolution is 1 ps
+source /tmp/diag4.tcl
+## run 800 ns
+t=16000 pc=0002 instr=3304 zero=0 branch=0 jump=0 load=0
+t=26000 pc=0004 instr=0310 zero=0 branch=0 jump=0 load=0
+t=36000 pc=0006 instr=3407 zero=0 branch=0 jump=0 load=0
+t=46000 pc=0008 instr=4431 zero=1 branch=1 jump=0 load=1
+t=56000 pc=000c instr=3506 zero=0 branch=0 jump=0 load=0
+t=66000 pc=000e instr=3602 zero=0 branch=0 jump=0 load=0
+t=76000 pc=0010 instr=0651 zero=0 branch=0 jump=0 load=0
+t=86000 pc=0012 instr=3704 zero=0 branch=0 jump=0 load=0
+t=96000 pc=0014 instr=5761 zero=1 branch=1 jump=0 load=0
+t=106000 pc=0016 instr=6001 zero=1 branch=0 jump=1 load=1
+t=116000 pc=001a instr=3801 zero=0 branch=0 jump=0 load=0
+t=126000 pc=001c instr=3902 zero=0 branch=0 jump=0 load=0
+t=136000 pc=001e instr=0892 zero=0 branch=0 jump=0 load=0
+t=146000 pc=0020 instr=3a04 zero=0 branch=0 jump=0 load=0
+t=156000 pc=0022 instr=4a81 zero=1 branch=1 jump=0 load=1
+t=166000 pc=0026 instr=3b06 zero=0 branch=0 jump=0 load=0
+t=176000 pc=0028 instr=3c03 zero=0 branch=0 jump=0 load=0
+t=186000 pc=002a instr=0cb3 zero=0 branch=0 jump=0 load=0
+t=196000 pc=002c instr=3d02 zero=0 branch=0 jump=0 load=0
+t=206000 pc=002e instr=4dc1 zero=1 branch=1 jump=0 load=1
+t=216000 pc=0032 instr=3e07 zero=0 branch=0 jump=0 load=0
+t=226000 pc=0034 instr=3eee zero=0 branch=0 jump=0 load=0
+t=236000 pc=0036 instr=3f05 zero=0 branch=0 jump=0 load=0
+t=246000 pc=0038 instr=4fe1 zero=1 branch=1 jump=0 load=1
+t=256000 pc=003c instr=3106 zero=0 branch=0 jump=0 load=0
+t=266000 pc=003e instr=3204 zero=0 branch=0 jump=0 load=0
+t=276000 pc=0040 instr=2120 zero=0 branch=0 jump=0 load=0
+t=286000 pc=0042 instr=1320 zero=0 branch=0 jump=0 load=0
+t=296000 pc=0044 instr=3406 zero=0 branch=0 jump=0 load=0
+t=306000 pc=0046 instr=4431 zero=1 branch=1 jump=0 load=1
+t=316000 pc=004a instr=3503 zero=0 branch=0 jump=0 load=0
+t=326000 pc=004c instr=3603 zero=0 branch=0 jump=0 load=0
+t=336000 pc=004e instr=4562 zero=1 branch=1 jump=0 load=1
+t=346000 pc=0054 instr=4701 zero=0 branch=1 jump=0 load=0
+t=356000 pc=0056 instr=6015 zero=1 branch=0 jump=1 load=1
+t=366000 pc=0082 instr=6fff zero=1 branch=0 jump=1 load=1
+t=376000 pc=0082 instr=6fff zero=1 branch=0 jump=1 load=1
+t=386000 pc=0082 instr=6fff zero=1 branch=0 jump=1 load=1
+t=396000 pc=0082 instr=6fff zero=1 branch=0 jump=1 load=1
+t=406000 pc=0082 instr=6fff zero=1 branch=0 jump=1 load=1
+t=416000 pc=0082 instr=6fff zero=1 branch=0 jump=1 load=1
+t=426000 pc=0082 instr=6fff zero=1 branch=0 jump=1 load=1
+t=436000 pc=0082 instr=6fff zero=1 branch=0 jump=1 load=1
+t=446000 pc=0082 instr=6fff zero=1 branch=0 jump=1 load=1
+t=456000 pc=0082 instr=6fff zero=1 branch=0 jump=1 load=1
+t=466000 pc=0082 instr=6fff zero=1 branch=0 jump=1 load=1
+t=476000 pc=0082 instr=6fff zero=1 branch=0 jump=1 load=1
+t=486000 pc=0082 instr=6fff zero=1 branch=0 jump=1 load=1
+t=496000 pc=0082 instr=6fff zero=1 branch=0 jump=1 load=1
+t=506000 pc=0082 instr=6fff zero=1 branch=0 jump=1 load=1
+t=516000 pc=0082 instr=6fff zero=1 branch=0 jump=1 load=1
+t=526000 pc=0082 instr=6fff zero=1 branch=0 jump=1 load=1
+t=536000 pc=0082 instr=6fff zero=1 branch=0 jump=1 load=1
+t=546000 pc=0082 instr=6fff zero=1 branch=0 jump=1 load=1
+t=556000 pc=0082 instr=6fff zero=1 branch=0 jump=1 load=1
+t=566000 pc=0082 instr=6fff zero=1 branch=0 jump=1 load=1
+t=576000 pc=0082 instr=6fff zero=1 branch=0 jump=1 load=1
+t=586000 pc=0082 instr=6fff zero=1 branch=0 jump=1 load=1
+t=596000 pc=0082 instr=6fff zero=1 branch=0 jump=1 load=1
+t=606000 pc=0082 instr=6fff zero=1 branch=0 jump=1 load=1
+t=616000 pc=0082 instr=6fff zero=1 branch=0 jump=1 load=1
+t=626000 pc=0082 instr=6fff zero=1 branch=0 jump=1 load=1
+t=636000 pc=0082 instr=6fff zero=1 branch=0 jump=1 load=1
+t=646000 pc=0082 instr=6fff zero=1 branch=0 jump=1 load=1
+t=656000 pc=0082 instr=6fff zero=1 branch=0 jump=1 load=1
+t=666000 pc=0082 instr=6fff zero=1 branch=0 jump=1 load=1
+t=676000 pc=0082 instr=6fff zero=1 branch=0 jump=1 load=1
+t=686000 pc=0082 instr=6fff zero=1 branch=0 jump=1 load=1
+t=696000 pc=0082 instr=6fff zero=1 branch=0 jump=1 load=1
+t=706000 pc=0082 instr=6fff zero=1 branch=0 jump=1 load=1
+t=716000 pc=0082 instr=6fff zero=1 branch=0 jump=1 load=1
+t=726000 pc=0082 instr=6fff zero=1 branch=0 jump=1 load=1
+t=736000 pc=0082 instr=6fff zero=1 branch=0 jump=1 load=1
+t=746000 pc=0082 instr=6fff zero=1 branch=0 jump=1 load=1
+t=756000 pc=0082 instr=6fff zero=1 branch=0 jump=1 load=1
+t=766000 pc=0082 instr=6fff zero=1 branch=0 jump=1 load=1
+t=776000 pc=0082 instr=6fff zero=1 branch=0 jump=1 load=1
+t=786000 pc=0082 instr=6fff zero=1 branch=0 jump=1 load=1
+t=796000 pc=0082 instr=6fff zero=1 branch=0 jump=1 load=1
+## exit
+INFO: xsimkernel Simulation Memory Usage: 286544 KB (Peak: 344076 KB), Simulation CPU Usage: 1220 ms
+INFO: [Common 17-206] Exiting xsim at Thu Oct 29 23:27:48 2026...
