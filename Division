@@ -5,12 +5,13 @@ Viet:
 - Data memory
 - mux2_1
 - wiring: R-type, addi, 
-- 
+
 
 Nick:
 - Program counter (pc)
 - Control unit
 - Sign extension
 - beq/bne decision
-- branch target
-- jump
+- all testbenches 
+- board_top.v
+- wiring: pc branch and jump logic
